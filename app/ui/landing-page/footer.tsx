@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { cn } from "@/app/lib/utils";
+import Image from 'next/image';
 
 export default function Footer() {
     return (
@@ -12,13 +12,13 @@ export default function Footer() {
                         <ul className="mt-3 space-y-2">
                             <li>
                                 <a href="https://nextjs.org/" className="hover:text-slate-200 dark:hover:text-slate-300">
-                                    <img src="https://nextjs.org/favicon.ico" alt="Next.js" className="inline-block w-4 h-4 mr-2" />
+                                    <Image src="https://nextjs.org/favicon.ico" alt="Next.js" width={16} height={16} className="inline-block w-4 h-4 mr-2" />
                                     Next.js
                                 </a>
                             </li>
                             <li>
                                 <a href="https://reactjs.org/" className="hover:text-slate-200 dark:hover:text-slate-300">
-                                    <img src="https://reactjs.org/favicon.ico" alt="React" className="inline-block w-4 h-4 mr-2" />
+                                    <Image src="https://reactjs.org/favicon.ico" alt="React" width={16} height={16} className="inline-block w-4 h-4 mr-2" />
                                     React
                                 </a>
                             </li>
@@ -29,7 +29,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a href="https://ui.aceternity.com" className="hover:text-slate-200 dark:hover:text-slate-300">
-                                    <img src="https://ui.aceternity.com/favicon.ico" alt="Aceternity UI" className="inline-block w-4 h-4 mr-2" />
+                                    <Image src="https://ui.aceternity.com/favicon.ico" alt="Aceternity UI" width={16} height={16} className="inline-block w-4 h-4 mr-2" />
                                     Aceternity UI
                                 </a>
                             </li>
@@ -40,13 +40,13 @@ export default function Footer() {
                         <ul className="mt-3 space-y-2">
                             <li>
                                 <a href="https://www.dr-chuck.com" className="hover:text-slate-200 dark:hover:text-slate-300">
-                                    <img src="https://www.dr-chuck.com/favicon.ico" alt="Dr. Chuck Severance" className="inline-block w-4 h-4 mr-2" />
+                                    <Image src="https://www.dr-chuck.com/favicon.ico" alt="Dr. Chuck Severance" width={16} height={16} className="inline-block w-4 h-4 mr-2" />
                                     Dr. Chuck Severance
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.umich.edu" className="hover:text-slate-200 dark:hover:text-slate-300">
-                                    <img src="https://www.umich.edu/favicon.ico" alt="University of Michigan" className="inline-block w-4 h-4 mr-2" />
+                                    <Image src="https://www.umich.edu/favicon.ico" alt="University of Michigan" width={16} height={16} className="inline-block w-4 h-4 mr-2" />
                                     University of Michigan
                                 </a>
                             </li>
@@ -99,8 +99,6 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-16 pt-10 text-center">
-                    {/* <svg viewBox="0 0 248 31" className="text-slate-200 dark:text-white w-auto h-6 mx-auto">
-                    </svg> */}
                     <span className="block text-gray-400 dark:text-gray-500 mt-4">All Rights Reserved</span>
                     <span className="block hover:text-gray-800 dark:hover:text-gray-200">2024</span>
                 </div>

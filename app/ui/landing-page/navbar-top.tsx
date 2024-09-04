@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/app/lib/utils";
+import Image from 'next/image';
 
 export default function Navbar() {
-    const [show, setShow] = useState(false);
-    const [scrolling, setScrolling] = useState(false);
+    const [, setScrolling] = useState(false);
     const [scrollTop, setScrollTop] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
     
@@ -33,11 +33,7 @@ export default function Navbar() {
         >
             <div className="flex flex-col sm:flex-row items-center justify-between p-4">
                 <div className="flex items-center mb-4 sm:mb-0">
-                    <img
-                        src="..../public/logo/logo.svg"
-                        alt="Logo"
-                        className="h-8 w-8"
-                    />
+                <Image src="/favicon/logo.png" alt="Logo" width={32} height={32} />
                     <h1 className="ml-2 text-lg font-bold text-white dark:text-black">My Portfolio</h1>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">

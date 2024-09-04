@@ -22,7 +22,7 @@ export default function PassportSection() {
               translateZ="50"
               className="mx-6 mb-6 text-neutral-200 text-lg max-w-sm mt-2 dark:text-neutral-300 animate-slide-in"
             >
-              Passionate Software developer specializing in web development and design. Let's build something amazing together!
+              Passionate Software developer specializing in web development and design. Let{`'`}s build something amazing together!
             </CardItem>
           </div>
           <CardItem
