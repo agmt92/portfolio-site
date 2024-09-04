@@ -9,7 +9,7 @@ export default function PassportSection() {
   return (
     <BackgroundBeamsWithCollision>
       <CardContainer className="inter-var">
-        <CardBody className="w-[25rem] h-[35rem] grid-flow-col sm:w-[30rem] sm:h-[40rem] md:w-[37rem] md:h-[48rem] md:flex-row lg:w-[50rem] lg:h-[30rem] lg:flex rounded-r-md rounded-tl-xl rounded-b-full sm:rounded-bl-3xl sm:rounded-r-md bg-gradient-to-r from-english-walnut-900 via-english-walnut-700 to-english-walnut-800 relative group/card hover:shadow-2xl dark:bg-black dark:border-white/[0.2] border-black/[0.1]">
+        <CardBody className="w-[18rem] h-[24rem] grid-flow-col sm:w-[30rem] sm:h-[40rem] md:w-[37rem] md:h-[48rem] md:flex-row lg:w-[50rem] lg:h-[30rem] lg:flex rounded-t-3xl rounded-b-full sm:rounded-bl-3xl sm:rounded-r-md bg-gradient-to-r from-english-walnut-900 via-english-walnut-700 to-english-walnut-800 relative group/card hover:shadow-2xl dark:bg-black dark:border-white/[0.2] border-black/[0.1]">
           <div className="flex-1">
             <CardItem
               translateZ="60"
@@ -29,7 +29,7 @@ export default function PassportSection() {
             translateZ="150"
             rotateX={0}
             rotateZ={0}
-            className="w-[25rem] h-[24.8rem] sm:w-[30rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl"
+            className="w-full h-[22rem] sm:w-[24rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl"
           >
             <Image
               src={imageUrl}
