@@ -14,6 +14,7 @@ interface TimelineEntry {
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -32,11 +33,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-neutral-950 dark:bg-white font-sans md:px-10"
-      ref={containerRef}
-    >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+    <div className="relative w-full bg-neutral-950 dark:bg-white font-sans md:px-10" ref={containerRef}>
+      <video
+        ref={videoRef}
+        className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
+        autoPlay
+        loop
+        muted
+        preload="auto"
+      >
+        <source src="/videos/child_astronaut.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/90 to-black/10 z-10" />
+      <div className="absolute top-[20rem] sm:top-[20rem] md:top-[30rem] left-0 w-full h-px bg-gradient-to-r from-slate-800 to-fuchsia-300 z-10" />
+
+      <div className="relative z-10 max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-black max-w-4xl">
           Changelog from my journey
         </h2>

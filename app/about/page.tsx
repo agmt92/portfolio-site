@@ -17,7 +17,7 @@ export default function Page() {
         <div>
           <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
             Completed the Next.JS Canary course. Learning the latest features, technologies and best practices for Next.JS Prerelease 15 canary version and using TypeScript as a programming language. <br />
-            Thanks to this collaboration between Facebook's React team and Vercel's Next JS team, those new features and solutions elevate the user experience, performance, SEO and accessibility of their website.
+            Thanks to this collaboration between Facebook&#39;s React team and Vercel&#39;s Next JS team, those new features and solutions elevate the user experience, performance, SEO and accessibility of their website.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -57,7 +57,7 @@ export default function Page() {
       content: (
         <div>
           <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
-          As my programs and apps became complex, I wanted to make sure they are tested, to make sure any updates don't break their original functionality. <br /> 
+          As my programs and apps became complex, I wanted to make sure they are tested, to make sure any updates don&#39;t break their original functionality. <br /> 
 To address this, I took the <strong>Quality Assurance Certification</strong> from freeCodeCamp, where I learned how to write tests using <strong>Chai</strong>, ensuring that my applications behaved exactly as I expected under different scenarios. <br /> 
 One of the key projects in this certification was building a full-fledged chat application, where I gained hands-on experience with advanced concepts in <strong>Node.js</strong> and <strong>Express.js</strong>. I used <strong>Pug</strong> as the template engine for rendering dynamic content, implemented <strong>Passport</strong> for authentication, and integrated <strong>Socket.io</strong> for real-time communication between the server and clients. <br />
 This comprehensive learning experience equipped me with practical tools and techniques to maintain the integrity and reliability of my web applications.
@@ -184,7 +184,7 @@ I also built several projects, including a shopping cart, while mastering <stron
       content: (
         <div>
           <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
-          In my teenage years I coded extensively with Microsoft's legacy <strong>JScript</strong> (ECMAScript 3) to build Microsoft products, namely <strong>Messenger Plus</strong> plugins, I wanted to deepen my understanding of modern JavaScript. <br />
+          In my teenage years I coded extensively with Microsoft&#39;s legacy <strong>JScript</strong> (ECMAScript 3) to build Microsoft products, namely <strong>Messenger Plus</strong> plugins, I wanted to deepen my understanding of modern JavaScript. <br />
 The <strong>JavaScript Algorithms and Data Structures Certification</strong> from freeCodeCamp extended my knowledge, particularly in implementing <strong>ES6</strong> features. <br />
 In addition to revisiting fundamentals like arrays, objects, and functions, I strengthened my skills in <strong>Object-Oriented Programming (OOP)</strong>, <strong>Functional Programming</strong>, and working with APIs and local storage, helping me build more dynamic, interactive applications.
           </p>
@@ -226,7 +226,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
       content: (
         <div>
           <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
-          Upon a Senior Programmer's advice, I started the formal learning path on <strong>freeCodeCamp</strong>, beginning with the <strong>Responsive Web Design Certification</strong> curriculum, which focused primarily on <strong>CSS</strong> and responsive design. <br />
+          Upon a Senior Programmer&#39;s advice, I started the formal learning path on <strong>freeCodeCamp</strong>, beginning with the <strong>Responsive Web Design Certification</strong> curriculum, which focused primarily on <strong>CSS</strong> and responsive design. <br />
         Starting with foundational projects like a cat photo app, I deepened my knowledge of CSS by learning modern techniques such as <strong>CSS variables</strong> while building a penguin, and best practices for accessibility with a quiz site. <br />
         I mastered responsive design by creating a photo gallery using <strong>Flexbox</strong>, for example, and a magazine article layout using <strong>CSS Grid</strong>, ensuring that webpages adapt smoothly across different screen sizes.
           </p>
@@ -352,7 +352,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
       title: "January",
       content: (
         <div>
-          <p>The <strong>Python for Everybody (PY4E)</strong> course offered a deep dive into Python's core functionality, focusing on practical and essential programming concepts. I worked extensively with functions, loops, and data structures like lists, dictionaries, and tuples, which allowed me to efficiently process and manage data.</p>
+          <p>The <strong>Python for Everybody (PY4E)</strong> course offered a deep dive into Python&#39;s core functionality, focusing on practical and essential programming concepts. I worked extensively with functions, loops, and data structures like lists, dictionaries, and tuples, which allowed me to efficiently process and manage data.</p>
 
 <p>As the course progressed, I explored more advanced topics, including regular expressions for pattern matching, working with files, and network programming to handle data across the web. I also gained experience with using web services and APIs, as well as handling databases for faster data retrieval and management.</p>
 
