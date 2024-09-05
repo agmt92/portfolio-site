@@ -29,7 +29,7 @@ export default function PassportSection() {
             translateZ="150"
             rotateX={0}
             rotateZ={0}
-            className="w-full h-[22rem] sm:w-[24rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl"
+            className="w-full h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl"
           >
             <Image
               src={imageUrl}
