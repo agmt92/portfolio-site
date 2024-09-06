@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef, Suspense } from "react";
-import Image from "next/image"; // Ensure you have next/image installed
-import { useScroll, useTransform, motion } from "framer-motion"; // Ensure you have framer-motion installed
+import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion"; 
 
 interface TimelineEntry {
   title: string;
@@ -16,7 +16,7 @@ const VideoComponent = ({ src }: { src: string }) => {
       autoPlay
       loop
       muted
-      preload="auto"
+      poster="/videos/child_astronaut.webp"
     >
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.

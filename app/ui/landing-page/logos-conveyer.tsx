@@ -31,7 +31,6 @@ const logos = [
   "/dev-logos/python.svg",
   "/dev-logos/javascript.svg",
   "/dev-logos/typescript.svg",
-  
 ];
 
 export default function LogosConveyer() {
@@ -51,7 +50,10 @@ export default function LogosConveyer() {
                 alt={`Logo ${index}`}
                 width={200}
                 height={100}
+                priority={false}
+                loading={index === 0 ? "eager" : "lazy"}
                 className="object-contain"
+                style={{ width: "10rem", height: "auto" }}
               />
             </div>
           ))}
