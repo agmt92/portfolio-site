@@ -18,7 +18,11 @@ const VideoComponent = ({ src }: { src: string }) => {
       autoPlay
       loop
       muted
+      // Prevent safari from downloading the video or showing buttons
       poster="/videos/child_astronaut.webp"
+      playsInline
+      webkit-playsinline="true"
+      controlsList="nodownload"
     >
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
