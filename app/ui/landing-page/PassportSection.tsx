@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/app/ui/components/3d-card";
-import {BackgroundBeamsWithCollision} from "@/app/ui/components/background-beams-with-collision";
+import { BackgroundBeamsWithCollision } from "@/app/ui/components/background-beams-with-collision";
 
 export default function PassportSection() {
-  const imageUrl = "/photos/ava.png";
+  const imageUrl = "/photos/ava.webp";
 
   return (
     <BackgroundBeamsWithCollision>
@@ -29,13 +29,15 @@ export default function PassportSection() {
             translateZ="150"
             rotateX={0}
             rotateZ={0}
-            className="w-full h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl"
+            className="w-full h-[22rem] sm:w-[30rem] sm:h-[30rem] md:w-[37rem] md:h-[38rem] lg:w-[25rem] lg:h-[30rem] rounded-full sm:rounded-bl-3xl sm:rounded-r-md shadow-xl relative"
           >
             <Image
               src={imageUrl}
               fill
               className="rounded-b-full sm:rounded-bl-3xl sm:rounded-r-md md:rounded-r-md lg:rounded-bl-sm md:h-[20rem] object-cover group-hover/card:shadow-xl"
               alt="Avatar"
+              priority={false}
+              loading="eager"
             />
           </CardItem>
         </CardBody>

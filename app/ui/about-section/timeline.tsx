@@ -1,20 +1,32 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+
+import { useState, useEffect, useRef, Suspense } from "react";
+import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion"; 
 
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
 }
 
+const VideoComponent = ({ src }: { src: string }) => {
+  return (
+    <video
+      className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
+      autoPlay
+      loop
+      muted
+      poster="/videos/child_astronaut.webp"
+    >
+      <source src={src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+};
+
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -34,17 +46,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="relative w-full bg-neutral-950 dark:bg-white font-sans md:px-10" ref={containerRef}>
-      <video
-        ref={videoRef}
-        className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
-        autoPlay
-        loop
-        muted
-        preload="auto"
-      >
-        <source src="/videos/child_astronaut.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <Suspense fallback={
+        <Image 
+          src="/videos/child_astronaut.webp"
+          alt="Child astronaut"
+          width={1280}
+          height={720}
+          layout="responsive"
+          className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
+        />
+      }>
+        <VideoComponent src="/videos/child_astronaut.mp4" />
+      </Suspense>
       <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/90 to-black/10 z-10" />
       <div className="absolute top-[20rem] sm:top-[20rem] md:top-[30rem] left-0 w-full h-px bg-gradient-to-r from-slate-800 to-fuchsia-300 z-10" />
 
