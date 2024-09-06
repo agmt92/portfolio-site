@@ -66,25 +66,7 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [
-    require("@designbycode/tailwindcss-text-glitch"),
-    function addVariablesForColors({ addBase, theme }: { addBase: (base: object) => void, theme: (path: string) => any }) {
-      const colors = theme("colors");
-      const colorVariables = Object.entries(colors).flatMap(([colorName, colorValue]) => {
-        if (typeof colorValue === "string") {
-          return [[`--${colorName}`, colorValue]];
-        } else if (typeof colorValue === "object" && colorValue !== null) {
-          return Object.entries(colorValue).map(([shade, value]) => [`--${colorName}-${shade}`, value]);
-        } else {
-          return [];
-        }
-      });
-
-      addBase({
-        ":root": Object.fromEntries(colorVariables),
-      });
-    },
-  ],
+  plugins: [],
 };
 
 export default config;
