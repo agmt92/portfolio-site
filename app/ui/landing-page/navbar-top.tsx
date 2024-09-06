@@ -61,9 +61,31 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             className={clsx(
-                                'hover:text-gray-800 dark:hover:text-gray-200 text-white dark:text-black',
-                                { 'text-english-walnut-300': pathname === link.href }
+                                'hover:text-gray-300 dark:hover:text-gray-200 text-white dark:text-black',
+                                {
+                                    'relative text-pink-500': pathname === link.href,
+                                    'before:absolute before:inset-0 before:bg-gradient-radial from-pink-500/10 to-pink-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
+                                    'before:animate-pulse': pathname === link.href
+                                }
                             )}
+                            style={{
+                                fontSize: "1rem",
+                                padding: "0.5rem 1rem",
+                                position: 'relative',
+                                display: 'inline-block',
+                                backgroundImage: pathname === link.href 
+                                    ? "radial-gradient(circle, rgba(255,20,147,0.8), transparent)" 
+                                    : "none",
+                                backdropFilter: pathname === link.href 
+                                    ? "blur(10px)" 
+                                    : "none",
+                                color: pathname === link.href ? 'pink' : 'inherit',
+                                boxShadow: pathname === link.href 
+                                    ? "0 0 15px rgba(255, 20, 147, 0.8), 0 0 30px rgba(255, 20, 147, 0.6)" 
+                                    : "none",
+                                borderRadius: pathname === link.href ? '50%' : '0',
+                                transition: 'all 1s ease-in-out',
+                            }}
                         >
                             {link.name}
                         </Link>
@@ -81,8 +103,30 @@ export default function Navbar() {
                                 href={link.href}
                                 className={clsx(
                                     'hover:text-gray-800 dark:hover:text-gray-200 text-white dark:text-black',
-                                    { 'bg-sky-100 text-blue-600': pathname === link.href }
+                                    {
+                                        'relative text-pink-500': pathname === link.href,
+                                        'before:absolute before:inset-0 before:bg-gradient-radial from-pink-500/10 to-pink-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
+                                        'before:animate-pulse': pathname === link.href
+                                    }
                                 )}
+                                style={{
+                                    fontSize: "1rem",
+                                    padding: "0.5rem 1rem",
+                                    position: 'relative',
+                                    display: 'inline-block',
+                                    backgroundImage: pathname === link.href 
+                                        ? "radial-gradient(circle, rgba(255,20,147,0.8), transparent)" 
+                                        : "none",
+                                    backdropFilter: pathname === link.href 
+                                        ? "blur(10px)" 
+                                        : "none",
+                                    color: pathname === link.href ? 'pink' : 'inherit',
+                                    boxShadow: pathname === link.href 
+                                        ? "0 0 15px rgba(255, 20, 147, 0.8), 0 0 30px rgba(255, 20, 147, 0.6)" 
+                                        : "none",
+                                    borderRadius: pathname === link.href ? '50%' : '0',
+                                    transition: 'all 0.3s ease-in-out',
+                                }}
                             >
                                 {link.name}
                             </Link>
