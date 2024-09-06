@@ -61,7 +61,7 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             className={clsx(
-                                'hover:text-gray-300 dark:hover:text-gray-200 text-white dark:text-black',
+                                'hover:text-lime-600 dark:hover:text-lime-600 text-white dark:text-black',
                                 {
                                     'relative text-pink-500': pathname === link.href,
                                     'before:absolute before:inset-0 before:bg-gradient-radial from-pink-500/10 to-pink-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
@@ -102,7 +102,7 @@ export default function Navbar() {
                             <Link
                                 href={link.href}
                                 className={clsx(
-                                    'hover:text-gray-800 dark:hover:text-gray-200 text-white dark:text-black',
+                                    'hover:text-lime-600 dark:hover:text-lime-600 text-white dark:text-black',
                                     {
                                         'relative text-pink-500': pathname === link.href,
                                         'before:absolute before:inset-0 before:bg-gradient-radial from-pink-500/10 to-pink-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
