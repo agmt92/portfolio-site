@@ -38,6 +38,7 @@ export default function PassportSection() {
               alt="Avatar"
               priority={false}
               loading="eager"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </CardItem>
         </CardBody>

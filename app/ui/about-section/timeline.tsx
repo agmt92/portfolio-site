@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion"; 
+import { useScroll, useTransform, motion } from "framer-motion";
+
+export const experimental_ppr = true 
 
 interface TimelineEntry {
   title: string;

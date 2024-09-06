@@ -49,7 +49,7 @@ export default function Navbar() {
         >
             <div className="flex flex-row items-center justify-between p-4 cursor-pointer sm:cursor-default" onClick={toggleNavbar}>
                 <div className="flex items-center">
-                    <Image src="/favicon/logo.png" alt="Logo" width={32} height={32} />
+                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} />
                     <h1 className="ml-2 text-lg font-bold text-white dark:text-black">My Portfolio</h1>
                 </div>
                 <div className="sm:hidden text-white dark:text-black ml-auto">

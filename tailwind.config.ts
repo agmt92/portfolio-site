@@ -43,6 +43,7 @@ const config: Config = {
         'fade-in': 'fadeIn 2s ease-out',
         'slide-up': 'slideUp 1s ease-out',
         scroll: 'scroll 40s linear infinite',
+        shimmer: 'shimmer 2s infinite forwards',
       },
       keyframes: {
         fadeIn: {
@@ -54,9 +55,7 @@ const config: Config = {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         shimmer: {
-          '100%': {
-            transform: 'translateX(100%)',
-          },
+          '100%': { transform: 'translateX(100%)' },
         },
         scroll: {
           '-100%': { transform: 'translateX(0%)' },
