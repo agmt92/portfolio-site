@@ -43,9 +43,9 @@ export default function LogosConveyer() {
         <Lamp />
 
         {/* Logos conveyor, higher z-index */}
-        <div className="absolute bottom-24 gap-x-80 size-max flex justify space-x-12 animate-scroll z-10">
+        <div className="absolute bottom-24 h-auto gap-x-80 size-max flex justify space-x-12 animate-scroll z-10">
           {logos.map((logo, index) => (
-            <div key={index} className="">
+            <div key={index} className="h-auto">
               <Image
                 src={logo}
                 alt={`Logo ${index}`}
