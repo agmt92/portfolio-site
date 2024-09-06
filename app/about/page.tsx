@@ -1,7 +1,10 @@
-"use Client";
+"use client";
+
 import { Timeline } from "../ui/about-section/timeline";
 import React from "react";
 import Image from "next/image";
+
+export const experimental_ppr = true
 
 export default function Page() {
   const data = [
@@ -25,6 +28,7 @@ export default function Page() {
               alt="Next.JS Canary Logo"
               width={500}
               height={500}
+              priority={true}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <Image
@@ -65,6 +69,7 @@ One of the key projects in this certification was building a full-fledged chat a
 This comprehensive learning experience equipped me with practical tools and techniques to maintain the integrity and reliability of my web applications.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/mocha_chai.png"
               alt="Chai Logo"
@@ -97,6 +102,7 @@ This comprehensive learning experience equipped me with practical tools and tech
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -111,6 +117,7 @@ To refine my skills, I pursued the <strong>Data Visualization Certification</str
 This course gave me the best practices for transforming raw data into clear, engaging visualizations.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/d3.webp"
               alt="Build a heatmap with D3.js"
@@ -143,6 +150,7 @@ This course gave me the best practices for transforming raw data into clear, eng
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -157,6 +165,7 @@ Through the <strong>Front End Development Libraries Certification</strong> at fr
 I also built several projects, including a shopping cart, while mastering <strong>React</strong> and <strong>Redux</strong> to create powerful and complex Single Page Applications (SPAs).
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/reactjs.webp"
               alt="React JS Logo"
@@ -189,6 +198,7 @@ I also built several projects, including a shopping cart, while mastering <stron
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -203,6 +213,7 @@ The <strong>JavaScript Algorithms and Data Structures Certification</strong> fro
 In addition to revisiting fundamentals like arrays, objects, and functions, I strengthened my skills in <strong>Object-Oriented Programming (OOP)</strong>, <strong>Functional Programming</strong>, and working with APIs and local storage, helping me build more dynamic, interactive applications.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/msn_messenger.webp"
               alt="Windows Messenger Plus knocking on the screen plugin"
@@ -235,6 +246,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -249,6 +261,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
         I mastered responsive design by creating a photo gallery using <strong>Flexbox</strong>, for example, and a magazine article layout using <strong>CSS Grid</strong>, ensuring that webpages adapt smoothly across different screen sizes.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/css.webp"
               alt="CSS3 Logo"
@@ -281,6 +294,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -295,6 +309,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
         From handling complex multi-table SQL relationships to working with JSON and APIs through Python, this course sharpened my skills in managing vast amounts of data efficiently, preparing me for real-world database challenges in production environments.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
             <Image
               src="/timeline/pgsql_artwork.webp"
               alt="Postgresql Logo"
@@ -327,6 +342,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -342,6 +358,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
         With the skills acquired from both DJ4E and WD4E, I built my first full-stack web application: a comprehensive platform for searching pharmacies and pharmaceutical products powered by a giant MySQL Database built from scraped and cleaned internet data. The platform featured a fully responsive design and a backend powered by Django, handling complex relational data structures and user authentication. It also included front-end elements styled using modern CSS and bootstrap techniques from the WD4E course and interactive JavaScript functionality.
           </p>
           <div className="grid grid-cols-2 gap-4">
+            
           <Image
               src="/timeline/mysql_artwork.webp"
               alt="MySQL Logo"
@@ -374,6 +391,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
@@ -388,6 +406,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
 
 <p>This comprehensive course provided a solid foundation in Python, with hands-on projects that prepared me for real-world application development, data manipulation, and backend integration.</p><br />
           <div className="grid grid-cols-2 gap-4">
+            
           <Image
               src="/timeline/bspython.webp"
               alt="Beautiful Soup and Python"
@@ -420,6 +439,7 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
               priority={false}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
+            
           </div>
         </div>
       ),
