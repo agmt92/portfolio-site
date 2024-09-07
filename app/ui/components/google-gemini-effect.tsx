@@ -26,7 +26,7 @@ export const GoogleGeminiEffect = ({
       <p className="text-5xl tracking-wider md:tracking-widest md:text-7xl font-black pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
         {title || `MY PROJECTS`}
       </p>
-      <p className="text-s md:text-xl font-thin text-center text-neutral-400 mt-2 max-w-lg mx-auto">
+      <p className="text-s md:text-xl font-thin text-center text-neutral-400 mt-6 max-w-lg mx-auto">
         {description ||
           `Scroll down to see my projects. Use the search bar for filtering, and simply click on a project to view more details. Also visit my Github to see my latest activity.`}
       </p>
