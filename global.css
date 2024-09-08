@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 *::-webkit-media-controls-panel {
     display: none!important;
     -webkit-appearance: none;
