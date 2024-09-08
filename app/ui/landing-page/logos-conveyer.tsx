@@ -35,7 +35,7 @@ const logos = [
 
 export default function LogosConveyer() {
   return (
-    <div className="relative w-full h-auto bg-gray-900 overflow-hidden">
+    <div className="relative snap-always snap-start w-full h-auto bg-gray-900 overflow-hidden">
       {/* Container for Lamp and Logos */}
       <div className="relative w-full h-full">
         {/* Lamp component, lower z-index */}

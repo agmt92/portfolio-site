@@ -18,7 +18,6 @@ const VideoComponent = ({ src }: { src: string }) => {
       autoPlay
       loop
       muted
-      // Prevent safari from downloading the video or showing buttons
       poster="/videos/child_astronaut.webp"
       playsInline
       webkit-playsinline="true"
@@ -64,7 +63,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       }>
         <VideoComponent src="/videos/child_astronaut.mp4" />
       </Suspense>
-      <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/90 to-black/10 z-10" />
+      <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/70 to-black/10 z-10" />
       <div className="absolute top-[20rem] sm:top-[20rem] md:top-[30rem] left-0 w-full h-px bg-gradient-to-r from-slate-800 to-fuchsia-300 z-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">

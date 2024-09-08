@@ -28,7 +28,7 @@ export const GoogleGeminiEffect = ({
       </p>
       <p className="text-s md:text-xl font-thin text-center text-neutral-400 mt-6 max-w-lg mx-auto">
         {description ||
-          `Scroll down to see my projects. Use the search bar for filtering, and simply click on a project to view more details. Also visit my Github to see my latest activity.`}
+          `For more details check out my Github profile.`}
       </p>
       <div className="absolute w-full h-[890px] -top-[14.6rem] sm:-top-[13.8rem] md:-top-[10rem] lg:-top-[9.5rem] xl:-top-[8rem] flex items-center justify-center bg-red-transparent  ">
         <button className="font-black bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto"
