@@ -11,7 +11,7 @@ export default function PassportSection() {
   return (
     <BackgroundBeamsWithCollision>
       <CardContainer className="inter-var">
-        <CardBody className="snap-always snap-start bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-[60vh] sm:h-[70vh] md:h-[80vh] rounded-xl p-6 m-4 border">
+        <CardBody className="snap-always snap-start bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 dark:bg-gradient-to-b dark:from-stone-100 dark:to-slate-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[30rem] h-[60vh] sm:h-[70vh] md:h-[80vh] rounded-xl p-6 m-4">
           <CardItem
             translateZ="100"
             className="text-xl font-bold text-white dark:text-neutral-600"

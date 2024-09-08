@@ -14,7 +14,7 @@ interface TimelineEntry {
 const VideoComponent = ({ src }: { src: string }) => {
   return (
     <video
-      className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
+      className="absolute dark:contrast-50 top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
       autoPlay
       loop
       muted
@@ -63,14 +63,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       }>
         <VideoComponent src="/videos/child_astronaut.mp4" />
       </Suspense>
-      <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/70 to-black/10 z-10" />
+      <div className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] bg-gradient-to-br from-black/50 to-black/10 dark:bg-gradient-to-br dark:from-white/40 dark:to-white/0 z-10" />
       <div className="absolute top-[20rem] sm:top-[20rem] md:top-[30rem] left-0 w-full h-px bg-gradient-to-r from-slate-800 to-fuchsia-300 z-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-black max-w-4xl">
           Changelog from my journey
         </h2>
-        <p className="text-neutral-300 dark:text-neutral-700 text-sm md:text-base max-w-sm">
+        <p className="text-neutral-300 dark:text-neutral-950 text-sm md:text-base max-w-sm">
           I&apos;ve been a passionate amateur programmer from my early years and decided recently to embark on a professional pathway that can bring effective solutions to your problems. Here&apos;s
           a timeline of my recent journey.
         </p>

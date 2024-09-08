@@ -70,7 +70,7 @@ export const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={cn(
-        "h-[48rem] sm:h-[48rem] md:h-[62rem] bg-gradient-to-b from-black to-zinc-800 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
+        "h-[48rem] sm:h-[48rem] md:h-[62rem] bg-gradient-to-b from-black to-zinc-800 dark:from-neutral-300 dark:to-neutral-100 relative flex items-center w-full justify-center overflow-hidden",
         className ?? ""
       )}
     >
@@ -201,7 +201,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-violet-500 via-amber-100 to-transparent",
+          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-violet-500 via-amber-100 to-transparent dark:bg-gradient-to-t dark:from-black dark:via-stone-800 dark:to-transparent",
           beamOptions.className ?? ""
         )}
       />
@@ -240,7 +240,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-yellow-500 to-transparent blur-sm"
+        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-yellow-500 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-stone-500 dark:to-transparent blur-sm"
       ></motion.div>
       {spans.map((span) => (
         <motion.span
@@ -252,7 +252,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
             opacity: 0,
           }}
           transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-pink-300 to-yellow-200"
+          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-pink-300 to-yellow-200 dark:bg-gradient-to-b dark:from-stone-800 dark:to-stone-500"
         />
       ))}
     </div>

@@ -52,13 +52,14 @@ export default function LogosConveyer() {
                 height={100}
                 priority={false}
                 loading={index === 0 ? "eager" : "lazy"}
-                className="object-contain"
+                className="object-contain dark:grayscale dark:invert dark:contrast-50"
                 style={{ width: "10rem", height: "auto" }}
               />
             </div>
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 w-full h-full dark:bg-gradient-to-b dark:from-black/70 dark:to-zinc-300"/>
     </div>
   );
 }

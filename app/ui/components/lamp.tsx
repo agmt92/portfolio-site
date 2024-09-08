@@ -14,7 +14,7 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="top-0 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="top-0 dark:text-black dark:invert bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Developing<br /> with
       </motion.h1>
@@ -52,7 +52,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-black w-full rounded-md z-0",
+        "relative transition-all duration-1000 ease-in flex min-h-[90vh] dark:min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-black  w-full rounded-md z-0 dark:invert dark:grayscale",
         className ?? ""
       )}
     >

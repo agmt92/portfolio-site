@@ -15,7 +15,7 @@ import GoogleGemini from '../ui/projects-section/geminieffect';
 
 export default function Page() {
   return (
-    <main className="relative w-full flex flex-col">
+    <main className="relative w-full dark:bg-white flex flex-col">
       <GoogleGemini/>
       <div className="mt-24">
       <ExpandableCard />

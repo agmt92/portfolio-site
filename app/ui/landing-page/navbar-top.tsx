@@ -4,16 +4,26 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Navbar() {
     const [isExpanded, setIsExpanded] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const pathname = usePathname();
 
     const toggleNavbar = () => {
         setIsExpanded(!isExpanded);
+    };
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+        if (isDarkMode) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
     };
 
     useEffect(() => {
@@ -41,19 +51,24 @@ export default function Navbar() {
     return (
         <nav
             className={clsx(
-                "h-auto z-50 border-b border-gray-700 dark:border-gray-200 sticky top-0 transition-transform duration-300 ease-in-out",
-                "bg-carbon-950 dark:bg-silver-200",
-                "md:bg-transparent backdrop-blur-md",
+                "h-auto z-50 border-b border-neutral-700 dark:border-neutral-200 sticky top-0 transition-transform duration-300 ease-in-out",
+                "bg-black dark:bg-gray/50",
+                "bg-transparent dark:bg-white backdrop-blur-md",
                 { "-translate-y-full": !isVisible, "translate-y-0": isVisible }
             )}
         >
-            <div className="flex flex-row items-center justify-between p-4 cursor-pointer sm:cursor-default" onClick={toggleNavbar}>
+            <div className="flex flex-row items-center justify-between p-4 cursor-pointer sm:cursor-default">
                 <div className="flex items-center">
-                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} />
-                    <h1 className="ml-2 text-lg font-bold text-silver-200 dark:text-black">My Portfolio</h1>
+                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} onClick={toggleNavbar}/>
+                    <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black" onClick={toggleNavbar}>My Portfolio</h1>
                 </div>
-                <div className="sm:hidden text-silver-200 dark:text-black ml-auto">
-                    {isExpanded ? <FaTimes size={24} /> : <FaBars size={24} />}
+                <div className="flex items-center space-x-4 ml-auto">
+                    <button onClick={toggleDarkMode} className="text-black dark:text-neutral-600">
+                        {isDarkMode ? <FaMoon size={24} /> : <FaSun size={24} className="text-yellow-500"/>}
+                    </button>
+                    <div className="sm:hidden text-neutral-200 dark:text-black">
+                        {isExpanded ? <FaTimes size={24} onClick={toggleNavbar} /> : <FaBars size={24} onClick={toggleNavbar} />}
+                    </div>
                 </div>
                 <div className="hidden sm:flex flex-row items-center space-x-4 ml-auto">
                     {links.map((link) => (
@@ -61,10 +76,10 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             className={clsx(
-                                'hover:text-silver-600 dark:hover:text-silver-100 text-silver-200 dark:text-black',
+                                'hover:text-neutral-100 dark:hover:text-neutral-600 text-neutral-200 dark:text-neutral-800',
                                 {
-                                    'relative text-silver-500': pathname === link.href,
-                                    'before:absolute before:inset-0 before:bg-gradient-radial from-silver-500/10 to-silver-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
+                                    'relative text-neutral-100 dark:text-neutral-400': pathname === link.href, // Path-specific active state
+                                    'before:absolute before:inset-0 before:bg-gradient-radial from-neutral-500/10 to-neutral-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
                                     'before:animate-pulse': pathname === link.href
                                 }
                             )}
@@ -79,7 +94,6 @@ export default function Navbar() {
                                 backdropFilter: pathname === link.href 
                                     ? "blur(10px)" 
                                     : "none",
-                                color: pathname === link.href ? 'silver' : 'inherit',
                                 boxShadow: pathname === link.href 
                                     ? "0 0 15px rgba(24,161,161, 0.8), 0 0 50px rgba(24,161,161, 0.9)" 
                                     : "none",
@@ -96,16 +110,16 @@ export default function Navbar() {
                 "sm:hidden overflow-hidden transition-max-height duration-500 ease-in-out",
                 { "max-h-0": !isExpanded, "max-h-96": isExpanded }
             )}>
-                <div className="flex flex-col items-center space-y-4 p-4 border-t border-gray-700 dark:border-gray-200">
+                <div className="flex flex-col items-center space-y-4 p-4 border-t border-neutral-700 dark:border-neutral-200">
                     {links.map((link) => (
-                        <div key={link.name} className="w-full border-b border-gray-700 dark:border-gray-200 pb-2">
+                        <div key={link.name} className="w-full border-b border-neutral-700 dark:border-neutral-200 pb-2">
                             <Link
                                 href={link.href}
                                 className={clsx(
-                                    'hover:text-silver-200 dark:hover:text-silver-600 text-silver-200 dark:text-black',
+                                    'hover:text-neutral-200 dark:hover:text-neutral-600 text-white dark:text-neutral-800', 
                                     {
-                                        'relative text-silver-100': pathname === link.href,
-                                        'before:absolute before:inset-0 before:bg-gradient-radial from-silver-500/10 to-silver-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
+                                        'relative text-neutral-300 dark:text-neutral-800': pathname === link.href,
+                                        'before:absolute before:inset-0 before:bg-gradient-radial from-neutral-500/10 to-neutral-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
                                         'before:animate-pulse': pathname === link.href
                                     }
                                 )}
@@ -120,7 +134,6 @@ export default function Navbar() {
                                     backdropFilter: pathname === link.href 
                                         ? "blur(30px)" 
                                         : "none",
-                                    color: pathname === link.href ? 'silver' : 'inherit',
                                     boxShadow: pathname === link.href 
                                         ? "0 0 15px rgba(24,161,161, 0.8), 0 0 90px rgba(24,161,161, 0.6)" 
                                         : "none",
