@@ -62,7 +62,7 @@ export const FlipWords = ({
         )}
         key={currentWord}
       >
-        {currentWord.split(" ").map((word, wordIndex) => (
+                {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
@@ -71,7 +71,10 @@ export const FlipWords = ({
               delay: wordIndex * 0.3,
               duration: 0.3,
             }}
-            className="inline-block whitespace-nowrap"
+            className={cn(
+              "inline-block whitespace-nowrap",
+              word === "AG's" ? "text-teal-200/25 dark:text-teal-950/40" : "dark:text-neutral-900/70 text-neutral-100/50"
+            )}
           >
             {word.split("").map((letter, letterIndex) => (
               <motion.span

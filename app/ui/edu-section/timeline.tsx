@@ -67,16 +67,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="absolute top-[20rem] sm:top-[20rem] md:top-[30rem] left-0 w-full h-px bg-gradient-to-r from-slate-800 to-fuchsia-300 z-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-black max-w-4xl">
+        <h2 className="animate-slidein300 opacity-0 text-lg md:text-4xl mb-4 text-white dark:text-black max-w-4xl">
           Changelog from my journey
         </h2>
-        <p className="text-neutral-300 dark:text-neutral-950 text-sm md:text-base max-w-sm">
+        <p className="animate-slidein300 opacity-0 text-neutral-300 dark:text-neutral-950 text-sm md:text-base max-w-sm">
           I&apos;ve been a passionate amateur programmer from my early years and decided recently to embark on a professional pathway that can bring effective solutions to your problems. Here&apos;s
           a timeline of my recent journey.
         </p>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="animate-slideleft opacity-0 relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
             key={index}

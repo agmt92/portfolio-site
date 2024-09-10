@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaProjectDiagram, FaBriefcase } from "react-icons/fa";
+import { FaProjectDiagram, FaBriefcase, FaInfoCircle } from "react-icons/fa";
 import { CardBody, CardContainer, CardItem } from "@/app/ui/components/3d-card";
 import { BackgroundBeamsWithCollision } from "@/app/ui/components/background-beams-with-collision";
 
@@ -23,7 +23,11 @@ export default function PassportSection() {
             translateZ="80"
             className="text-neutral-300 text-sm max-w-sm mt-2 dark:text-neutral-500"
           >
-            Passionate Software developer specializing in web development and design. Let{`'`}s build something amazing together!
+            Passionate Software developer specializing in scalable web-apps. Learn more{" "}
+            <span className="whitespace-pre"> </span>
+            <Link href="/about" className="text-emerald-500 inline-flex dark:text-emerald-400 items-center">
+                <FaInfoCircle className="mr-2 self-baseline" /> about me.
+              </Link>
           </CardItem>
           <CardItem
             translateZ="150"

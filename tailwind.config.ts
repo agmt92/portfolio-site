@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 
 const config: Config = {
@@ -40,19 +43,51 @@ const config: Config = {
         },
       },
       animation: {
-        'fade-in': 'fadeIn 2s ease-out',
-        'slide-up': 'slideUp 1s ease-out',
+        slideDown: 'slideDown 1s ease-out',
+        fadeIn: 'fadeIn 1s ease-out forwards',
+        slideleft: 'slideleft 1s ease 700ms forwards',
         scroll: 'scroll 40s linear infinite',
         shimmer: 'shimmer 2s infinite forwards',
+        aurora: "aurora 60s linear infinite",
+        slidein300: "slidein 1s ease 300ms forwards",
+        slidein700: "slidein 1s ease 700ms forwards",
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        fadeIn: {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        slideleft: {
+          from: {
+            opacity: "0",
+            transform: "translatex(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translatex(0)",
+          },
         },
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
@@ -65,7 +100,19 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
 
 export default config;
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ".aurora-bg": newVars,
+  });
+}
