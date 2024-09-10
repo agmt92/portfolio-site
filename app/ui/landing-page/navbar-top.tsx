@@ -53,21 +53,20 @@ export default function Navbar() {
         <nav
             className={clsx(
                 "h-auto z-50 border-b border-neutral-700 dark:border-neutral-200 sticky top-0 transition-transform duration-300 ease-in-out",
-                "bg-black dark:bg-gray/50",
-                "bg-transparent dark:bg-white backdrop-blur-md",
+                "bg-black/50 dark:bg-neutral-50/90", // Background changes
                 { "-translate-y-full": !isVisible, "translate-y-0": isVisible }
             )}
         >
-            <div className="flex flex-row items-center justify-between p-4 cursor-pointer sm:cursor-default">
-                <div className="flex items-center">
-                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} onClick={toggleNavbar}/>
-                    <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black" onClick={toggleNavbar}>My Portfolio</h1>
+            <div className="flex backdrop-blur-lg dark:backdrop-blur-sm items-center justify-between p-4">
+                <div className="items-center flex sm:hidden md:flex">
+                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} className="cursor-pointer" onClick={toggleNavbar}/>
+                    <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black cursor-pointer" onClick={toggleNavbar}>AG</h1>
                 </div>
                 <div className="flex items-center space-x-4 ml-auto">
-                    <button onClick={toggleDarkMode} className="text-black dark:text-neutral-600">
-                        {isDarkMode ? <FaMoon size={24} /> : <FaSun size={24} className="text-yellow-500"/>}
+                    <button onClick={toggleDarkMode} className="text-neutral-400 dark:text-neutral-600">
+                        {isDarkMode ? <FaMoon size={24} /> : <FaSun className="text-amber-200 dark:text-amber-200" size={24} />}
                     </button>
-                    <div className="sm:hidden text-neutral-200 dark:text-black">
+                    <div className="sm:hidden text-neutral-200 dark:text-neutral-600">
                         {isExpanded ? <FaTimes size={24} onClick={toggleNavbar} /> : <FaBars size={24} onClick={toggleNavbar} />}
                     </div>
                 </div>
@@ -77,9 +76,9 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             className={clsx(
-                                'hover:text-neutral-100 dark:hover:text-neutral-600 text-neutral-200 dark:text-neutral-800',
+                                'hover:text-neutral-100 dark:hover:text-neutral-400 text-neutral-200 dark:text-neutral-950 transition-colors duration-300',
                                 {
-                                    'relative text-neutral-100 dark:text-neutral-400': pathname === link.href, // Path-specific active state
+                                    'relative text-neutral-100 dark:text-neutral-400': pathname === link.href,
                                     'before:absolute before:inset-0 before:bg-gradient-radial from-neutral-500/10 to-neutral-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
                                     'before:animate-pulse': pathname === link.href
                                 }
@@ -99,7 +98,7 @@ export default function Navbar() {
                                     ? "0 0 15px rgba(24,161,161, 0.8), 0 0 50px rgba(24,161,161, 0.9)" 
                                     : "none",
                                 borderRadius: pathname === link.href ? '10%' : '0',
-                                transition: 'all 1s ease-in-out',
+                                transition: 'all 0.6s ease-in-out',
                             }}
                         >
                             {link.name}
@@ -107,44 +106,43 @@ export default function Navbar() {
                     ))}
                 </div>
             </div>
+            {/* Mobile menu overlay */}
             <div className={clsx(
-                "sm:hidden overflow-hidden transition-max-height duration-500 ease-in-out",
+                "sm:hidden overflow-hidden transition-all duration-700 ease-in-out backdrop-blur-md dark:backdrop-blur-sm bg-black/50 dark:bg-neutral-50/80", // Smooth animation
                 { "max-h-0": !isExpanded, "max-h-96": isExpanded }
-            )}>
+            )} style={{ zIndex: 50, position: "absolute", top: "100%", width: "100%"}}>
                 <div className="flex flex-col items-center space-y-4 p-4 border-t border-neutral-700 dark:border-neutral-200">
                     {links.map((link) => (
-                        <div key={link.name} className="w-full border-b border-neutral-700 dark:border-neutral-200 pb-2">
-                            <Link
-                                href={link.href}
-                                className={clsx(
-                                    'hover:text-neutral-200 dark:hover:text-neutral-600 text-white dark:text-neutral-800', 
-                                    {
-                                        'relative text-neutral-300 dark:text-neutral-800': pathname === link.href,
-                                        'before:absolute before:inset-0 before:bg-gradient-radial from-neutral-500/10 to-neutral-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
-                                        'before:animate-pulse': pathname === link.href
-                                    }
-                                )}
-                                style={{
-                                    fontSize: "1rem",
-                                    padding: "0.5rem 1rem",
-                                    position: 'relative',
-                                    display: 'inline-block',
-                                    backgroundImage: pathname === link.href 
-                                        ? "radial-gradient(circle, rgba(24,161,161,0.3), transparent)" 
-                                        : "none",
-                                    backdropFilter: pathname === link.href 
-                                        ? "blur(30px)" 
-                                        : "none",
-                                    boxShadow: pathname === link.href 
-                                        ? "0 0 15px rgba(24,161,161, 0.8), 0 0 90px rgba(24,161,161, 0.6)" 
-                                        : "none",
-                                    borderRadius: pathname === link.href ? '10%' : '0',
-                                    transition: 'all 0.3s ease-in-out',
-                                }}
-                            >
-                                {link.name}
-                            </Link>
-                        </div>
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={clsx(
+                                'hover:text-neutral-200 dark:hover:text-neutral-500 text-white dark:text-neutral-900 text-lg',
+                                {
+                                    'relative text-neutral-300 dark:text-neutral-500': pathname === link.href,
+                                    'before:absolute before:inset-0 before:bg-gradient-radial darkfrom-neutral-500/10 to-neutral-500/60 before:rounded-full before:blur-xl before:z-[-1]': pathname === link.href,
+                                    'before:animate-pulse': pathname === link.href
+                                }
+                            )}
+                            style={{
+                                padding: "0.5rem 1rem",
+                                position: 'relative',
+                                display: 'inline-block',
+                                backgroundImage: pathname === link.href 
+                                    ? "radial-gradient(circle, rgba(24,161,161,0.3), transparent)" 
+                                    : "none",
+                                backdropFilter: pathname === link.href 
+                                    ? "blur(30px)" 
+                                    : "none",
+                                boxShadow: pathname === link.href 
+                                    ? "0 0 15px rgba(24,161,161, 0.8), 0 0 90px rgba(24,161,161, 0.6)" 
+                                    : "none",
+                                borderRadius: pathname === link.href ? '10%' : '0',
+                                transition: 'all 0.3s ease-in-out',
+                            }}
+                        >
+                            {link.name}
+                        </Link>
                     ))}
                 </div>
             </div>
