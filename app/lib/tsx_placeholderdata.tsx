@@ -747,11 +747,12 @@ In addition to revisiting fundamentals like arrays, objects, and functions, I st
     title: "January",
     content: (
       <div>
-        <p>The <strong>Python for Everybody (PY4E)</strong> course offered a deep dive into Python&#39;s core functionality, focusing on practical and essential programming concepts. I worked extensively with functions, loops, and data structures like lists, dictionaries, and tuples, which allowed me to efficiently process and manage data.</p>
-
-<p>As the course progressed, I explored more advanced topics, including regular expressions for pattern matching, working with files, and network programming to handle data across the web. I also gained experience with using web services and APIs, as well as handling databases for faster data retrieval and management.</p>
-
-<p>This comprehensive course provided a solid foundation in Python, with hands-on projects that prepared me for real-world application development, data manipulation, and backend integration.</p><br />
+        <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
+        The <strong>Python for Everybody (PY4E)</strong> course offered a deep dive into Python&#39;s core functionality, focusing on practical and essential programming concepts. I worked extensively with functions, loops, and data structures like lists, dictionaries, and tuples, which allowed me to efficiently process and manage data.</p>
+        <p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
+As the course progressed, I explored more advanced topics, including regular expressions for pattern matching, working with files, and network programming to handle data across the web. I also gained experience with using web services and APIs, as well as handling databases for faster data retrieval and management.</p>
+<p className="text-neutral-200 dark:text-neutral-800 text-xs md:text-sm font-normal mb-8">
+This comprehensive course provided a solid foundation in Python, with hands-on projects that prepared me for real-world application development, data manipulation, and backend integration.</p><br />
         <div className="grid grid-cols-2 gap-4">
           
         <Image
