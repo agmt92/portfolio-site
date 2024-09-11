@@ -17,10 +17,10 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | My Portfolio',
-    default: 'My Portfolio',
+    template: '%s | Mohamed Tarek AbdelGhani',
+    default: 'Mohamed Tarek AG',
   },
-  description: 'The official portfolio website built with Next.js.',
+  description: 'My official portfolio website built with Next.js.',
   metadataBase: new URL('https://my-portfolio.vercel.app'),
 };
 

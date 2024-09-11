@@ -7,7 +7,7 @@ const Form: React.FC = () => {
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
             <p className="max-w-xl text-lg text-gray-100 dark:text-gray-900">
-              I'm a passionate developer always looking for new opportunities and collaborations. Feel free to reach out if you have any questions or project ideas!
+              I&apos;m a passionate developer always looking for new opportunities and collaborations. Feel free to reach out if you have any questions or project ideas!
             </p>
 
             <div className="mt-8">

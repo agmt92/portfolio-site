@@ -5,6 +5,7 @@ import ExpandableCard from '../ui/projects-section/grid';
 // import MatrixRain from '../ui/components/MatrixRain';
 import GoogleGemini from '../ui/projects-section/geminieffect';
 
+
 // const placeholders = [
 //   "Search a project by name..",
 //   "Search a project by topic...",
@@ -15,7 +16,7 @@ import GoogleGemini from '../ui/projects-section/geminieffect';
 
 export default function Page() {
   return (
-    <main className="relative w-full flex flex-col">
+    <main className="relative animate-fadeIn w-full dark:bg-white flex flex-col">
       <GoogleGemini/>
       <div className="mt-24">
       <ExpandableCard />

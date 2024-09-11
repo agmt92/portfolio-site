@@ -35,7 +35,7 @@ const logos = [
 
 export default function LogosConveyer() {
   return (
-    <div className="relative w-full h-auto bg-gray-900 overflow-hidden">
+    <div className="relative snap-always snap-start w-full h-auto bg-gray-900 overflow-hidden">
       {/* Container for Lamp and Logos */}
       <div className="relative w-full h-full">
         {/* Lamp component, lower z-index */}
@@ -52,13 +52,14 @@ export default function LogosConveyer() {
                 height={100}
                 priority={false}
                 loading={index === 0 ? "eager" : "lazy"}
-                className="object-contain"
+                className="object-contain dark:grayscale dark:invert dark:contrast-50"
                 style={{ width: "10rem", height: "auto" }}
               />
             </div>
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 w-full h-full dark:bg-gradient-to-b dark:from-black/70 dark:to-zinc-300"/>
     </div>
   );
 }

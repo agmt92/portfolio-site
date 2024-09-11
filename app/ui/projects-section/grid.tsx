@@ -157,7 +157,7 @@ export default function ExpandableCard() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-5xl my-6 mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start gap-4">
+      <ul className="max-w-5xl my-6 mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-4">
         {cards
         .filter((card) => {
           return (
@@ -171,12 +171,12 @@ export default function ExpandableCard() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-800 dark:hover:bg-neutral-50 rounded-xl cursor-pointer"
+            className="p-4 mx-6 sm:mx-4 md:mx-2 lg:mx-0 flex flex-col  hover:bg-neutral-800 dark:hover:bg-neutral-100 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
-                  width={100}
+                  width={200}
                   height={100}
                   src={card.src}
                   alt={card.title}

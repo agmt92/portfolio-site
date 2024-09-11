@@ -70,7 +70,7 @@ const VideoBackground: React.FC = () => {
   }, [isSmOrLarger, isLoading]);
 
   const words = [
-    "Responsive", "Fast", "Secure", "Tested", "Accessible",
+    "AG's", "Full-Stack", "Reliable", "Responsive", "Fast", "Secure", "Tested", "Accessible",
     "Modern", "Dynamic", "Static", "Progressive"
   ];
   // 16:9 aspect ratio
@@ -105,17 +105,18 @@ const VideoBackground: React.FC = () => {
         quality={100}
         priority={true}
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-transparent dark:bg-black -z-50"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 dark:bg-white/30"></div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-3xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mx-auto font-normal text-zinc-300">
-          <span className="inline-block text-center subpixel-antialiased">
+        <div className="text-3xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mx-auto font-normal text-zinc-300 dark:text-zinc-900">
+          <span className="animate-slideleft opacity-0 inline-block text-center subpixel-antialiased">
 
             <FlipWords
               words={words}
               duration={3000}
-              className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl tracking-widest font-black text-white"
+              className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl tracking-widest font-black text-white dark:text-stone-900"
             />
-          </span><br />Web Applications
+          </span><br /><span className="animate-slidein300 opacity-0">Web Applications</span>
         </div>
       </div>
     </div>

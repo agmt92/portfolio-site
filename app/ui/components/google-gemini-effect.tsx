@@ -3,6 +3,7 @@ import { cn } from "@/app/lib/utils";
 import { motion, MotionValue } from "framer-motion";
 import React from "react";
 import useAspectRatio from "@/app/hooks/useAspectRatio";
+import { FaArrowDown } from 'react-icons/fa';
 
 const transition = {
   duration: 0,
@@ -23,18 +24,24 @@ export const GoogleGeminiEffect = ({
     const aspectRatio = useAspectRatio();
   return (
     <div className={cn("sticky top-60", className ?? "")}>
-      <p className="text-5xl tracking-wider md:tracking-widest md:text-7xl font-black pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      <p className="text-5xl tracking-wider md:tracking-widest md:text-7xl font-black pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500 dark:bg-gradient-to-b dark:from-zinc-800 dark:to-stone-950">
         {title || `MY PROJECTS`}
       </p>
       <p className="text-s md:text-xl font-thin text-center text-neutral-400 mt-6 max-w-lg mx-auto">
         {description ||
-          `Scroll down to see my projects. Use the search bar for filtering, and simply click on a project to view more details. Also visit my Github to see my latest activity.`}
+          `Check my recent activity at Github.`} 
       </p>
       <div className="absolute w-full h-[890px] -top-[14.6rem] sm:-top-[13.8rem] md:-top-[10rem] lg:-top-[9.5rem] xl:-top-[8rem] flex items-center justify-center bg-red-transparent  ">
-        <button className="font-black bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto"
+        <button className="font-black bg-white dark:bg-stone-200 rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto"
         onClick={() => window.open("https://www.github.com/agmt92", "_blank")}>
         github.com/agmt92
         </button>
+      </div>
+      <div className="absolute w-full h-[890px]  top-[23rem] sm:top-[33rem] flex self-end justify-center">
+        <FaArrowDown className="text-white dark:text-black animate-bounce" /> 
+      </div>
+      <div className="absolute w-full h-[890px] top-[20rem] sm:top-[30rem] flex self-end justify-center">
+        <span className="text-neutral-500 dark:text-neutral-400">keep scrolling</span> 
       </div>
       <svg
         width="1440"
