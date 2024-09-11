@@ -59,7 +59,7 @@ export default function Navbar() {
         >
             <div className="flex backdrop-blur-lg dark:backdrop-blur-sm items-center justify-between p-4">
                 <div className="items-center flex sm:hidden md:flex">
-                    <Image src="/favicon/favicon.ico" alt="Logo" width={32} height={32} className="cursor-pointer" onClick={toggleNavbar}/>
+                    <Image src="/logo/logo.svg" alt="Logo" width={44} height={44} className="cursor-pointer" onClick={toggleNavbar}/>
                     <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black cursor-pointer" onClick={toggleNavbar}>AG</h1>
                 </div>
                 <div className="flex items-center space-x-4 ml-auto">
