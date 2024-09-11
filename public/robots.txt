@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfolio-one-delta-49.vercel.app/
+
+# Sitemaps
+Sitemap: https://portfolio-one-delta-49.vercel.app/sitemap.xml
