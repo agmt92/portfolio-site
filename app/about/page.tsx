@@ -67,13 +67,13 @@ export default function Page() {
                 Background
               </h2>
               <div className="ml-7 md:ml-0 md:col-span-3 leading-relaxed text-md sm:text-lg md:text-xl lg:col-span-4">
-              <p className="text-pretty indent-2 mt-6">
+                <div className="text-pretty indent-2 mt-6">
                   I have built my foundation through various projects, specializing in JavaScript (React, Node.js), Python (Django), and database management (PostgreSQL, MySQL). I recently completed advanced courses in technologies such as{" "}
                   <LinkPreview url="https://nextjs.org/" className="font-bold text-teal-200 dark:text-teal-700">Next.js</LinkPreview>,{" "}
                   <LinkPreview url="https://www.typescriptlang.org/" className="font-bold text-teal-200 dark:text-teal-700">TypeScript</LinkPreview>, and{" "}
                   <LinkPreview url="https://www.chaijs.com/" className="font-bold text-teal-200 dark:text-teal-700">Chai</LinkPreview> and Mocha for Quality Assurance testing, which have equipped me with the skills to create reliable and high-performing applications. My recent projects have involved implementing real-time communication, data visualization with{" "}
                   <LinkPreview url="https://d3js.org/" className="font-bold text-teal-200 dark:text-teal-700">D3.js</LinkPreview>, and ensuring best practices in responsive design and accessibility.
-                </p>
+                </div>
                 <p className="mt-4 text-pretty">
                   My early exposure to programming languages as a child has allowed me to quickly adapt to new frameworks and technologies. I thrive on the challenge of adopting different tools based on the diverse needs of my projects, ensuring that I&apos;m always learning and pushing the boundaries of what I can achieve.
                 </p>

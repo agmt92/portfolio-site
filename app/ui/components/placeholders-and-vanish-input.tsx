@@ -57,23 +57,25 @@ export default function PlaceholdersAndVanishInput({
     if (!inputRef.current) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+  
+    // Set the willReadFrequently option when getting the canvas context
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
     if (!ctx) return;
-
+  
     canvas.width = 800;
     canvas.height = 800;
     ctx.clearRect(0, 0, 800, 800);
+  
     const computedStyles = getComputedStyle(inputRef.current);
-
     const fontSize = parseFloat(computedStyles.getPropertyValue("font-size"));
     ctx.font = `${fontSize * 2}px ${computedStyles.fontFamily}`;
     ctx.fillStyle = "#FFF";
     ctx.fillText(value, 16, 40);
-
+  
     const imageData = ctx.getImageData(0, 0, 800, 800);
     const pixelData = imageData.data;
     const newData: { x: number; y: number; color: number[] }[] = [];
-
+  
     for (let t = 0; t < 800; t++) {
       const i = 4 * t * 800;
       for (let n = 0; n < 800; n++) {
@@ -96,7 +98,7 @@ export default function PlaceholdersAndVanishInput({
         }
       }
     }
-
+  
     newDataRef.current = newData.map(({ x, y, color }) => ({
       x,
       y,

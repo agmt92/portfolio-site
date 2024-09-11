@@ -8,8 +8,8 @@ export const experimental_ppr = true
 
 export default function Page() {
   return (
-    <div className="w-full">
+    <main className="w-full">
       <Timeline data={exp_data} />
-    </div>
+    </main>
   );
 }

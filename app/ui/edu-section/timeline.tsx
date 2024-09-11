@@ -57,7 +57,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           alt="Child astronaut"
           width={1280}
           height={720}
-          layout="responsive"
           className="absolute top-0 right-0 w-full h-[20rem] sm:h-[20rem] md:h-[30rem] object-cover z-0"
         />
       }>

@@ -1,11 +1,19 @@
-import { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     domains: [
       "api.microlink.io", // Microlink Image Preview
+      "nextjs.org",
+      "reactjs.org",
+      "ui.aceternity.com",
+      "www.dr-chuck.com",
+      "www.umich.edu",
     ],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io', // Ensure this is added
+      },
       {
         protocol: 'https',
         hostname: 'nextjs.org',
@@ -30,7 +38,11 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     ppr: 'incremental',
-    },
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+
+module.exports.env = {
+  FORMSPREE_URL: process.env.FORMSPREE_URL,
+};
