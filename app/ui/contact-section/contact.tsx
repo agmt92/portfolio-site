@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface FormObject {
   name: string;
@@ -16,80 +18,84 @@ interface Errors {
 }
 
 const Form: React.FC = () => {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
   const validateForm = (formObject: FormObject): Errors => {
     const errorMessages: Errors = {};
-    
-    // Name Validation: Only letters, spaces and should be at least 2 characters
+
     if (!/^[a-zA-Z\s]{2,50}$/.test(formObject.name)) {
-      errorMessages.name = "Please enter a valid name (letters and spaces only, 2-50 characters).";
-    }
-    
-    // Email Validation: Basic email format check
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formObject.email)) {
-      errorMessages.email = "Please enter a valid email address.";
-    }
-    
-    // Phone Validation: Optional, but if provided, only digits, dashes, and spaces allowed
-    if (formObject.phone && !/^[0-9\s\-\+]{10,15}$/.test(formObject.phone)) {
-      errorMessages.phone = "Please enter a valid phone number (10-15 digits).";
+      errorMessages.name = 'Please enter a valid name (letters and spaces only, 2-50 characters).';
     }
 
-    // Message Validation: Ensure message isn't empty
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formObject.email)) {
+      errorMessages.email = 'Please enter a valid email address.';
+    }
+
+    if (formObject.phone && !/^[0-9\s\-\+]{10,15}$/.test(formObject.phone)) {
+      errorMessages.phone = 'Please enter a valid phone number (10-15 digits).';
+    }
+
     if (!formObject.message || formObject.message.trim().length < 10) {
-      errorMessages.message = "Your message should be at least 10 characters long.";
+      errorMessages.message = 'Your message should be at least 10 characters long.';
     }
 
     return errorMessages;
   };
 
   const sanitizeInput = (input: string): string => {
-    return input.replace(/[<>\/\[\]{}()";]/g, "");
+    return input.replace(/[<>\/\[\]{}()";]/g, '');
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
-
+  
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     let formObject: FormObject = Object.fromEntries(formData.entries()) as unknown as FormObject;
-
+  
     // Sanitize inputs to prevent injections
     formObject = Object.fromEntries(
       Object.entries(formObject).map(([key, value]) => [key, sanitizeInput(value as string)])
     ) as unknown as FormObject;
-
-    // Validate form data
+  
+    // Ensure all values are strings and handle undefined values
+    const formObjectAsString = Object.fromEntries(
+      Object.entries(formObject).map(([key, value]) => [key, value?.toString() || ''])
+    ) as Record<string, string>;
+  
     const validationErrors = validateForm(formObject);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setLoading(false);
       return;
     }
-
+  
     try {
       const response = await fetch(process.env.FORMSPREE_URL as string, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formObject),
+        body: JSON.stringify(formObjectAsString), // Send the form object as strings
       });
-
+  
       if (response.ok) {
         setSubmitted(true);
         form.reset();
       } else {
-        alert("There was a problem submitting the form");
+        // Pass form data with string values in query params
+        const queryParams = new URLSearchParams(formObjectAsString).toString();
+        router.push(`/contact/error?${queryParams}`);
       }
     } catch (error) {
       console.error(error);
-      alert("There was a problem submitting the form");
+      const queryParams = new URLSearchParams(formObjectAsString).toString();
+      router.push(`/contact/error?${queryParams}`);
     } finally {
       setLoading(false);
     }
@@ -104,10 +110,10 @@ const Form: React.FC = () => {
               Have an idea or a project in mind? Let&apos;s talk. I&apos;ll be happy to help you.
             </p>
             <p className="max-w-xl text-lg text-gray-100 dark:text-gray-900">
-              If you hate forms, feel free to send an email to{" "}
-              <a href="mailto:agmt@dr.com" className="text-pink-600">
+              If you hate forms, feel free to send an email to{' '}
+              <a href="mailto:agmt@dr.com" className="text-stone-50 underline decoration-teal-500 dark:text-neutral-900 font-black">
                 agmt@dr.com
-              </a>{" "}
+              </a>{' '}
               or just give me a call.
             </p>
             <p className="pt-4">
@@ -115,7 +121,7 @@ const Form: React.FC = () => {
             </p>
 
             <div className="mt-8">
-              <a href="tel:+4369010674084" className="text-2xl font-bold text-pink-600">
+              <a href="tel:+4369010674084" className="text-stone-50 underline decoration-teal-500 dark:text-neutral-900 font-black">
                 0690 106 4084
               </a>
               <address className="mt-2 not-italic text-gray-100 dark:text-gray-900">Vienna, Austria</address>
@@ -184,11 +190,11 @@ const Form: React.FC = () => {
                   <button
                     type="submit"
                     className={`inline-block w-full rounded-lg bg-white dark:bg-black px-5 py-3 font-medium text-black dark:text-white sm:w-auto ${
-                      loading ? "cursor-not-allowed opacity-50" : ""
+                      loading ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                     disabled={loading}
                   >
-                    {loading ? "Sending..." : "Send Enquiry"}
+                    {loading ? 'Sending...' : 'Send Enquiry'}
                   </button>
                 </div>
               </form>

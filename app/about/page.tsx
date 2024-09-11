@@ -27,7 +27,7 @@ export default function Page() {
             <div className="snap-start grid grid-cols-8 text-lg md:text-xl lg:text-2xl xl:text-4xl font-normal">
               {/* Text Section */}
               <div className="col-span-8 lg:col-span-4 xl:col-span-5">
-                <div className="animate-slidein300 opacity-0 text-neutral-50 leading-relaxed tracking-wide dark:text-neutral-900 break-words">
+                <div className="text-neutral-50 leading-relaxed tracking-wide dark:text-neutral-900 break-words">
                   <h2 className="text-4xl sm:5xl xl:text-7xl font-semibold mb-4">Hello!</h2>
                   <p className="pt-24 text-xl leading-loose xl:text-3xl">
                     I&apos;m{" "}

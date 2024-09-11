@@ -28,10 +28,10 @@ export default function PlaceholdersAndVanishInput({
 
   const handleVisibilityChange = useCallback(() => {
     if (document.visibilityState !== "visible" && intervalRef.current) {
-      clearInterval(intervalRef.current); 
+      clearInterval(intervalRef.current);
       intervalRef.current = null;
     } else if (document.visibilityState === "visible") {
-      startAnimation(); 
+      startAnimation();
     }
   }, [startAnimation]);
 
@@ -57,34 +57,30 @@ export default function PlaceholdersAndVanishInput({
     if (!inputRef.current) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-  
+
     // Set the willReadFrequently option when getting the canvas context
     const ctx = canvas.getContext("2d", { willReadFrequently: true });
     if (!ctx) return;
-  
+
     canvas.width = 800;
     canvas.height = 800;
     ctx.clearRect(0, 0, 800, 800);
-  
+
     const computedStyles = getComputedStyle(inputRef.current);
     const fontSize = parseFloat(computedStyles.getPropertyValue("font-size"));
     ctx.font = `${fontSize * 2}px ${computedStyles.fontFamily}`;
     ctx.fillStyle = "#FFF";
     ctx.fillText(value, 16, 40);
-  
+
     const imageData = ctx.getImageData(0, 0, 800, 800);
     const pixelData = imageData.data;
     const newData: { x: number; y: number; color: number[] }[] = [];
-  
+
     for (let t = 0; t < 800; t++) {
       const i = 4 * t * 800;
       for (let n = 0; n < 800; n++) {
         const e = i + 4 * n;
-        if (
-          pixelData[e] !== 0 &&
-          pixelData[e + 1] !== 0 &&
-          pixelData[e + 2] !== 0
-        ) {
+        if (pixelData[e] !== 0 && pixelData[e + 1] !== 0 && pixelData[e + 2] !== 0) {
           newData.push({
             x: n,
             y: t,
@@ -98,7 +94,7 @@ export default function PlaceholdersAndVanishInput({
         }
       }
     }
-  
+
     newDataRef.current = newData.map(({ x, y, color }) => ({
       x,
       y,
@@ -178,6 +174,7 @@ export default function PlaceholdersAndVanishInput({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Submit", value);
     vanishAndSubmit();
     onSubmit && onSubmit(e);
   };
@@ -187,13 +184,25 @@ export default function PlaceholdersAndVanishInput({
     onSearch(value);
   }, 300);
 
+  const handleClear = () => {
+    if (!animating) {
+      setValue("");
+      setSearchTerm("");
+      onSearch("");
+      setCurrentPlaceholder(0);
+
+    }
+  };
+
   return (
     <form
       className={cn(
-        "w-full mb-12 relative max-w-xl mx-auto bg-zinc-800 dark:bg-white h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
+        "w-full mb-12 relative max-w-xl mx-auto bg-zinc-50 dark:bg-white h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
         value && "bg-gray-50"
       )}
       onSubmit={handleSubmit}
+      onReset={handleClear}
+
     >
       <canvas
         className={cn(
@@ -213,16 +222,28 @@ export default function PlaceholdersAndVanishInput({
         onKeyDown={handleKeyDown}
         ref={inputRef}
         value={value}
+        placeholder={placeholders[currentPlaceholder]} 
+        aria-label="Search input"
         type="text"
         className={cn(
-          "w-full relative text-sm sm:text-base z-50 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-10 pr-20",
+          "w-full relative text-sm sm:text-base z-50 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-12 pr-20",
           animating ? "text-transparent dark:text-transparent" : ""
         )}
       />
+      <button
 
+        onClick={handleClear}
+        type="button"
+        aria-label="Clear search"
+        className="absolute left-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-red-300 dark:disabled:bg-red-30 focus:ring focus:none bg-red-500 dark:bg-red-500 active:bg-red-700 active:dark:bg-red-700 transition duration-200 flex items-center justify-center"
+      >
+        X
+      </button>
+    
       <button
         disabled={!value}
         type="submit"
+        aria-label="Submit search"
         className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
       >
         <motion.svg
@@ -256,7 +277,6 @@ export default function PlaceholdersAndVanishInput({
           <path d="M13 6l6 6" />
         </motion.svg>
       </button>
-
       <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
         <AnimatePresence mode="wait">
           {!value && (
@@ -278,7 +298,7 @@ export default function PlaceholdersAndVanishInput({
                 duration: 0.3,
                 ease: "linear",
               }}
-              className="dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-500 pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
+              className="dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-100 pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
             >
               {placeholders[currentPlaceholder]}
             </motion.p>

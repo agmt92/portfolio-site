@@ -40,6 +40,7 @@ export default function ExpandableCard() {
     setSearchTerm(value.toLowerCase());
   };
 
+
   return (
     <>
       <PlaceholdersAndVanishInput

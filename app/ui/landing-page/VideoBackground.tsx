@@ -89,6 +89,8 @@ const VideoBackground: React.FC = () => {
             className="hidden sm:block w-full h-auto object-contain"
             muted
             playsInline
+            title="Background video from a Drone"
+            aria-label="Background video from a drone showing a sunset over a foresty mountain and foggy valleys"
           >
             <source src="/videos/vid1.mp4" type="video/mp4" />
             Your browser does not support the video tag.

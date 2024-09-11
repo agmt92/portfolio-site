@@ -63,12 +63,27 @@ export default function Navbar() {
                     <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black cursor-pointer" onClick={toggleNavbar}>AG</h1>
                 </div>
                 <div className="flex items-center space-x-4 ml-auto">
-                    <button onClick={toggleDarkMode} className="text-neutral-400 dark:text-neutral-600">
-                        {isDarkMode ? <FaMoon size={24} /> : <FaSun className="text-amber-200 dark:text-amber-200" size={24} />}
-                    </button>
-                    <div className="sm:hidden text-neutral-200 dark:text-neutral-600">
-                        {isExpanded ? <FaTimes size={24} onClick={toggleNavbar} /> : <FaBars size={24} onClick={toggleNavbar} />}
-                    </div>
+                <button
+                    id="dark-mode-toggle"
+                    name="dark-mode-toggle"
+                    onClick={toggleDarkMode}
+                    className="text-neutral-400 dark:text-neutral-600"
+                    aria-label="switch theme" 
+                >
+                    {isDarkMode ? (
+                    <FaMoon size={24} />
+                    ) : (
+                    <FaSun className="text-amber-200 dark:text-amber-200" size={24} />
+                    )}
+                </button>
+
+                <div className="sm:hidden text-neutral-200 dark:text-neutral-600">
+                    {isExpanded ? (
+                    <FaTimes size={24} onClick={toggleNavbar} aria-label="Close menu" />
+                    ) : (
+                    <FaBars size={24} onClick={toggleNavbar} aria-label="Open menu" />
+                    )}
+                </div>
                 </div>
                 <div className="hidden sm:flex flex-row items-center space-x-4 ml-auto">
                     {links.map((link) => (
