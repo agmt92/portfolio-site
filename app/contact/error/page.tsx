@@ -1,12 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import MatrixRain from '@/app/ui/components/MatrixRain';
 
-export default function ErrorPage() {
+function ErrorPageContent() {
   const searchParams = useSearchParams();
-
 
   const formData = {
     name: searchParams.get('name') || '',
@@ -14,7 +13,6 @@ export default function ErrorPage() {
     phone: searchParams.get('phone') || '',
     message: searchParams.get('message') || '',
   };
-
 
   const handleRetry = async () => {
     try {
@@ -38,11 +36,9 @@ export default function ErrorPage() {
     }
   };
 
-
   const handleGoBack = () => {
     window.history.back();
   };
-
 
   const handleCopy = () => {
     const formText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
@@ -82,5 +78,13 @@ export default function ErrorPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ErrorPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ErrorPageContent />
+    </Suspense>
   );
 }
