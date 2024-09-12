@@ -55,7 +55,7 @@ export default function Footer() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="mailto:agmt@dr.com" className="hover:text-slate-200 dark:hover:text-slate-300 dark:text-slate-800" aria-label="Send an email to agmt@dr.com">
+                        <Link href="mailto:contact@mtag.me" className="hover:text-slate-200 dark:hover:text-slate-300 dark:text-slate-800" aria-label="Send an email to contact@mtag.me">
                             Email
                         </Link>
                     </li>
@@ -84,7 +84,7 @@ export default function Footer() {
 				</Link>
 			</div>
 			<div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
-				<Link rel="noopener noreferrer" href="mailto:agmt@dr.com" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:text-neutral-500">
+				<Link rel="noopener noreferrer" href="mailto:contact@mtag.me" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:text-neutral-500">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-10 h-10">
 						<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
 						<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>

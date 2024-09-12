@@ -11,17 +11,17 @@ export default function PassportSection() {
   return (
     <BackgroundBeamsWithCollision>
       <CardContainer className="inter-var">
-        <CardBody className="snap-always snap-start bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 dark:bg-gradient-to-b dark:from-stone-100 dark:to-slate-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[30rem] h-[75vh] sm:h-[70vh] md:h-[80vh] rounded-xl p-6 m-4">
+        <CardBody className="snap-always snap-start flex flex-col bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 dark:bg-gradient-to-b dark:from-stone-100 dark:to-slate-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[30rem]  rounded-xl px-6 m-4 min-h-[80vh]">
           <CardItem
             translateZ="100"
-            className="text-xl font-bold text-white dark:text-neutral-600"
+            className="text-xl font-bold mt-4 text-white dark:text-neutral-600"
           >
             Mohamed Tarek AbdelGhani
           </CardItem>
           <CardItem
             as="p"
             translateZ="80"
-            className="text-neutral-300 text-sm max-w-sm mt-2 dark:text-neutral-500"
+            className="text-neutral-300 text-sm max-w-sm my-2 dark:text-neutral-500"
           >
             Passionate Software developer specializing in scalable web-apps. Learn more{" "}
             <span className="whitespace-pre"> </span>
@@ -33,20 +33,20 @@ export default function PassportSection() {
             translateZ="150"
             rotateX={0}
             rotateZ={0}
-            className="w-full mt-4"
+            className="w-full my-2 min-h-[5vh] "
           >
             <Image
               src={imageUrl}
               height="1000"
               width="600"
               quality={100}
-              className="h-[30vh] sm:h-[40vh] md:h-[50vh] w-full object-cover object-[0%_20%] rounded-xl group-hover/card:shadow-xl"
+              className="object-cover object-[5%_30%] max-h-[50vh]  rounded-xl group-hover/card:shadow-xl"
               alt="Avatar"
               loading="eager"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes=" (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </CardItem>
-          <div className="flex justify-between items-center mt-20">
+          <div className="flex justify-between h-24 items-center mt-20">
             <CardItem
               translateZ={20}
               translateX={-40}

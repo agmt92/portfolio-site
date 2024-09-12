@@ -111,8 +111,8 @@ const Form: React.FC = () => {
             </p>
             <p className="max-w-xl text-lg text-gray-100 dark:text-gray-900">
               If you hate forms, feel free to send an email to{' '}
-              <a href="mailto:agmt@dr.com" className="text-stone-50 underline decoration-teal-500 dark:text-neutral-900 font-black">
-                agmt@dr.com
+              <a href="mailto:contact@mtag.me" className="text-stone-50 underline decoration-teal-500 dark:text-neutral-900 font-black">
+                contact@mtag.me
               </a>{' '}
               or just give me a call.
             </p>
