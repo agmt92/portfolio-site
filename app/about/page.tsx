@@ -21,7 +21,7 @@ export default function Page() {
       {/* Aurora Background */}
       <div className="aurora-bg">
       <AuroraBG />
-        <section className="relative z-10 px-12 py-32 sm:px-12 md:py-36 md:px-20 xl:py-36 xl:px-44 min-h-screen w-full">
+        <section className="relative z-10 px-6 py-32 sm:px-12 md:py-36 md:px-20 xl:py-36 xl:px-44 min-h-screen w-full">
           <article className="snap-mandatory snap-y">
             {/* Hello Section */}
             <div className="snap-start grid grid-cols-8 text-lg md:text-xl lg:text-2xl xl:text-4xl font-normal">
@@ -29,7 +29,7 @@ export default function Page() {
               <div className="col-span-8 lg:col-span-4 xl:col-span-5">
                 <div className="text-neutral-50 leading-relaxed tracking-wide dark:text-neutral-900 break-words">
                   <h2 className="text-4xl sm:5xl xl:text-7xl font-semibold mb-4">Hello!</h2>
-                  <p className="pt-24 text-xl leading-loose xl:text-3xl">
+                  <p className="pt-24 text-md sm:text-lg leading-loose xl:text-3xl">
                     I&apos;m{" "}
                     <span className="text-stone-50 xl:tracking-widest dark:text-neutral-900 font-black">
                       <TypewriterEffect words={words} />
@@ -66,13 +66,13 @@ export default function Page() {
               <h2 className="lg:col-span-1 text-2xl uppercase font-bold">
                 Background
               </h2>
-              <div className="ml-7 md:ml-0 md:col-span-3 leading-relaxed text-md sm:text-lg md:text-xl lg:col-span-4">
+              <div className="md:ml-0 md:col-span-3 leading-relaxed text-md sm:text-lg md:text-xl lg:col-span-4">
                 <div className="text-pretty indent-2 mt-6">
                   I have built my foundation through various projects, specializing in JavaScript (React, Node.js), Python (Django), and database management (PostgreSQL, MySQL). I recently completed advanced courses in technologies such as{" "}
-                  <LinkPreview url="https://nextjs.org/" className="font-bold text-teal-200 dark:text-teal-700">Next.js</LinkPreview>,{" "}
-                  <LinkPreview url="https://www.typescriptlang.org/" className="font-bold text-teal-200 dark:text-teal-700">TypeScript</LinkPreview>, and{" "}
-                  <LinkPreview url="https://www.chaijs.com/" className="font-bold text-teal-200 dark:text-teal-700">Chai</LinkPreview> and Mocha for Quality Assurance testing, which have equipped me with the skills to create reliable and high-performing applications. My recent projects have involved implementing real-time communication, data visualization with{" "}
-                  <LinkPreview url="https://d3js.org/" className="font-bold text-teal-200 dark:text-teal-700">D3.js</LinkPreview>, and ensuring best practices in responsive design and accessibility.
+                  <span className="font-bold ">Next.js</span>,{" "}
+                  <span className="font-bold ">TypeScript</span>, and{" "}
+                  <span className="font-bold ">Chai</span> and Mocha for Quality Assurance testing, which have equipped me with the skills to create reliable and high-performing applications. My recent projects have involved implementing real-time communication, data visualization with{" "}
+                  <span className="font-bold ">D3.js</span>, and ensuring best practices in responsive design and accessibility.
                 </div>
                 <p className="mt-4 text-pretty">
                   My early exposure to programming languages as a child has allowed me to quickly adapt to new frameworks and technologies. I thrive on the challenge of adopting different tools based on the diverse needs of my projects, ensuring that I&apos;m always learning and pushing the boundaries of what I can achieve.
@@ -90,61 +90,58 @@ export default function Page() {
                 <div>
                   <h3 className="font-semibold text-lg uppercase mb-2">Languages</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://www.ecma-international.org/"
-                     imageSrc="/certs/ecma.webp"
-                     isStatic
-                     className="font-bold text-teal-200 dark:text-teal-700">JavaScript (ES6)</LinkPreview></li>
-                    <li><LinkPreview url="https://www.typescriptlang.org/" className="font-bold text-teal-200 dark:text-teal-700">TypeScript</LinkPreview></li>
-                    <li><LinkPreview url="https://www.python.org/" className="font-bold text-teal-200 dark:text-teal-700">Python</LinkPreview></li>
-                    <li><LinkPreview url="https://sass-lang.com/" className="font-bold text-teal-200 dark:text-teal-700">CSS/Sass</LinkPreview></li>
-                    <li><LinkPreview url="https://html.spec.whatwg.org/" className="font-bold text-teal-200 dark:text-teal-700">HTML</LinkPreview></li>
-                    <li><LinkPreview url="https://www.w3.org/TR/sql/" className="font-bold text-teal-200 dark:text-teal-700">SQL</LinkPreview></li>
-                    <li><LinkPreview url="https://www.w3.org/TR/xml/" className="font-bold text-teal-200 dark:text-teal-700">XML</LinkPreview></li>
+                    <li>JavaScript (ES6)</li>
+                    <li>TypeScript</li>
+                    <li>Python</li>
+                    <li>CSS/Sass</li>
+                    <li>HTML</li>
+                    <li>SQL</li>
+                    <li>XML</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-semibold  text-lg uppercase mb-2">Frameworks</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://nextjs.org/" className="font-bold text-teal-200 dark:text-teal-700">Next.JS</LinkPreview></li>
-                    <li><LinkPreview url="https://www.djangoproject.com/" className="font-bold text-teal-200 dark:text-teal-700">Django</LinkPreview></li>
-                    <li><LinkPreview url="https://socket.io/" className="font-bold text-teal-200 dark:text-teal-700">Socket.io</LinkPreview></li>
-                    <li><LinkPreview url="https://expressjs.com/" className="font-bold text-teal-200 dark:text-teal-700">Express.js</LinkPreview></li>
+                    <li>Next.JS</li>
+                    <li>Django</li>
+                    <li>Socket.io</li>
+                    <li>Express.js</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg uppercase mb-2">Libraries</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://reactjs.org/" className="font-bold text-teal-200 dark:text-teal-700">React & Redux</LinkPreview></li>
-                    <li><LinkPreview url="https://d3js.org/" className="font-bold text-teal-200 dark:text-teal-700">D3</LinkPreview></li>
-                    <li><LinkPreview url="https://axios-http.com/" className="font-bold text-teal-200 dark:text-teal-700">Axios</LinkPreview></li>
-                    <li><LinkPreview url="https://jquery.com/" className="font-bold text-teal-200 dark:text-teal-700">jQuery</LinkPreview></li>
-                    <li><LinkPreview url="https://getbootstrap.com/" className="font-bold text-teal-200 dark:text-teal-700">Bootstrap</LinkPreview></li>
-                    <li><LinkPreview url="https://tailwindcss.com/" className="font-bold text-teal-200 dark:text-teal-700">Tailwindcss</LinkPreview></li>
-                    <li><LinkPreview url="https://numpy.org/" className="font-bold text-teal-200 dark:text-teal-700">NumPy</LinkPreview></li>
-                    <li><LinkPreview url="https://pandas.pydata.org/" className="font-bold text-teal-200 dark:text-teal-700">Pandas</LinkPreview></li>
-                    <li><LinkPreview url="https://www.crummy.com/software/BeautifulSoup/" className="font-bold text-teal-200 dark:text-teal-700">BeautifulSoup</LinkPreview></li>
-                    <li><LinkPreview url="https://www.sqlalchemy.org/" className="font-bold text-teal-200 dark:text-teal-700">SQLAlchemy</LinkPreview></li>
-                    <li><LinkPreview url="https://scrapy.org/" className="font-bold text-teal-200 dark:text-teal-700">Scrapy</LinkPreview></li>
-                    <li><LinkPreview url="https://github.com/seatgeek/fuzzywuzzy" className="font-bold text-teal-200 dark:text-teal-700">fuzzywuzzy</LinkPreview></li>
+                    <li>React & Redux</li>
+                    <li>D3</li>
+                    <li>Axios</li>
+                    <li>jQuery</li>
+                    <li>Bootstrap</li>
+                    <li>Tailwindcss</li>
+                    <li>NumPy</li>
+                    <li>Pandas</li>
+                    <li>BeautifulSoup</li>
+                    <li>SQLAlchemy</li>
+                    <li>Scrapy</li>
+                    <li>fuzzywuzzy</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg snap-center uppercase mb-2">Tools</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://www.gnu.org/software/bash/" className="font-bold text-teal-200 dark:text-teal-700">Bash</LinkPreview></li>
-                    <li><LinkPreview url="https://git-scm.com/" className="font-bold text-teal-200 dark:text-teal-700">Git & GitHub</LinkPreview></li>
-                    <li><LinkPreview url="https://www.chaijs.com/" className="font-bold text-teal-200 dark:text-teal-700">Chai</LinkPreview></li>
-                    <li><LinkPreview url="https://www.kali.org/" className="font-bold text-teal-200 dark:text-teal-700">Kali Linux</LinkPreview></li>
-                    <li><LinkPreview url="https://developer.chrome.com/docs/devtools/" className="font-bold text-teal-200 dark:text-teal-700">Chrome DevTools</LinkPreview></li>
-                    <li><LinkPreview url="https://www.postman.com/" className="font-bold text-teal-200 dark:text-teal-700">Postman</LinkPreview></li>
-                    <li><LinkPreview url="https://www.docker.com/" className="font-bold text-teal-200 dark:text-teal-700">Docker & Kubernetes</LinkPreview></li>
-                    <li><LinkPreview url="https://www.mongodb.com/" className="font-bold text-teal-200 dark:text-teal-700">MongoDB</LinkPreview></li>
-                    <li><LinkPreview url="https://mongoosejs.com/" className="font-bold text-teal-200 dark:text-teal-700">Mongoose</LinkPreview></li>
-                    <li><LinkPreview url="https://www.postgresql.org/" className="font-bold text-teal-200 dark:text-teal-700">PostgreSQL</LinkPreview></li>
-                    <li><LinkPreview url="https://www.mysql.com/" className="font-bold text-teal-200 dark:text-teal-700">MySQL</LinkPreview></li>
-                    <li><LinkPreview url="https://www.sqlite.org/index.html" className="font-bold text-teal-200 dark:text-teal-700">Sqlite3</LinkPreview></li>
-                    <li><LinkPreview url="https://www.atlassian.com/software/jira" className="font-bold text-teal-200 dark:text-teal-700">Jira</LinkPreview></li>
-                    <li><LinkPreview url="https://www.wrike.com/" className="font-bold text-teal-200 dark:text-teal-700">Wrike</LinkPreview></li>
+                    <li>Bash</li>
+                    <li>Git & GitHub</li>
+                    <li>Chai</li>
+                    <li>Kali Linux</li>
+                    <li>Chrome DevTools</li>
+                    <li>Postman</li>
+                    <li>Docker & Kubernetes</li>
+                    <li>MongoDB</li>
+                    <li>Mongoose</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>Sqlite3</li>
+                    <li>Jira</li>
+                    <li>Wrike</li>
                   </ul>
                 </div>
               </div>
@@ -157,7 +154,7 @@ export default function Page() {
               </h2>
               <div className="col-span-4 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-semibold uppercase text-lg mb-2">freeCodeCamp.com</h3>
+                  <h3 className="font-semibold uppercase text-lg mb-2">freeCodeCamp</h3>
                   <ul className="space-y-1">
                     <li><LinkPreview url="https://www.freecodecamp.org/certification/agmt/responsive-web-design"
                      imageSrc="/certs/wd.webp"
@@ -188,11 +185,11 @@ export default function Page() {
                 <div>
                   <h3 className="font-semibold  text-lg uppercase mb-2">Dr.Chuck U-Mich</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://www.dj4e.com/" className="font-bold text-teal-200 dark:text-teal-700">DJ4E</LinkPreview></li>
+                    <li>DJ4E</li>
                     <li>Django For Everybody</li>
-                    <li><LinkPreview url="https://www.pg4e.com/" className="font-bold text-teal-200 dark:text-teal-700">PG4E</LinkPreview></li>
+                    <li>PG4E</li>
                     <li>Postgres For Everybody</li>
-                    <li><LinkPreview url="https://www.py4e.com/" className="font-bold text-teal-200 dark:text-teal-700">PY4E</LinkPreview></li>
+                    <li>PY4E</li>
                     <li><LinkPreview
                         url="https://www.py4e.com/tsugi/badges/images/2f2f425332786238776c4e32674d4d4c45334451454e6955666f474c306b64354e537762705335786259374c6a646b68624b796559514f776632755a6b6d583041636956474770725076364561362b586651784f58365533763067754e59334d31665553317836546746773d.png"
                         imageSrc="/photos/6253354a692b62727166394a4342616f326749484b364e78416e6d424241784d463035714e4e4975514c666a596e525672506e5856422b2b53797a6c5a36775a4544382b4a362b5547324b4f74434b497446504142454646516b7049656465722f4c6568572b474d446b6f3d.png"
@@ -221,14 +218,11 @@ export default function Page() {
                 <div>
                   <h3 className="font-semibold uppercase mb-2 text-lg">Other Tools</h3>
                   <ul className="space-y-1">
-                    <li><LinkPreview url="https://www.adobe.com/products/photoshop-lightroom.html" className="font-bold text-teal-200 dark:text-teal-700">Lightroom</LinkPreview></li>
-                    <li><LinkPreview url="https://www.adobe.com/products/photoshop.html" className="font-bold text-teal-200 dark:text-teal-700">Photoshop</LinkPreview></li>
-                    <li><LinkPreview url="https://www.apple.com/final-cut-pro/" className="font-bold text-teal-200 dark:text-teal-700">Final Cut</LinkPreview></li>
-                    <li><LinkPreview url="https://www.image-line.com/fl-studio/" className="font-bold text-teal-200 dark:text-teal-700">FL Studio</LinkPreview></li>
-                    <li><LinkPreview url="https://www.adobe.com/products/audition.html" 
-                    imageSrc="/certs/audi.webp"
-                    isStatic
-                    className="font-bold text-teal-200 dark:text-teal-700">Audition</LinkPreview></li>
+                    <li>Lightroom</li>
+                    <li>Photoshop</li>
+                    <li>Final Cut</li>
+                    <li>FL Studio</li>
+                    <li>Audition</li>
                   </ul>
                 </div>
               </div>
