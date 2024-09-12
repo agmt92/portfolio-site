@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from './ui/landing-page/navbar-top';
 import Footer from './ui/landing-page/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <SpeedInsights />
+        <Analytics />
         <Footer />
       </body>
     </html>
