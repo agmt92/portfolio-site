@@ -11,7 +11,7 @@ export default function PassportSection() {
   return (
     <BackgroundBeamsWithCollision>
       <CardContainer className="inter-var">
-        <CardBody className="snap-always snap-start bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 dark:bg-gradient-to-b dark:from-stone-100 dark:to-slate-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[30rem] h-[60vh] sm:h-[70vh] md:h-[80vh] rounded-xl p-6 m-4">
+        <CardBody className="snap-always snap-start bg-gradient-to-t from-stone-600 via-stone-800 to-english-walnut-900 dark:bg-gradient-to-b dark:from-stone-100 dark:to-slate-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black w-auto sm:w-[30rem] h-[75vh] sm:h-[70vh] md:h-[80vh] rounded-xl p-6 m-4">
           <CardItem
             translateZ="100"
             className="text-xl font-bold text-white dark:text-neutral-600"
@@ -52,7 +52,7 @@ export default function PassportSection() {
               translateX={-40}
               as={Link}
               href="/experience"
-              className="px-4 py-2 rounded-xl text-xs font-bold dark:text-black text-white dark:bg-white bg-black hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200"
+              className="px-6 md:px-12 py-6 rounded-xl text-xs font-bold dark:text-black text-white dark:bg-white bg-black hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200"
             >
               <FaBriefcase className="inline-block mr-2" />
               Experience
@@ -62,7 +62,7 @@ export default function PassportSection() {
               translateX={40}
               as={Link}
               href="/projects"
-              className="px-4 py-2 rounded-xl text-xs font-semibold bg-black dark:bg-white dark:text-black text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200"
+              className="px-6 md:px-16 py-6 rounded-xl text-xs font-semibold bg-black dark:bg-white dark:text-black text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200"
             >
               <FaProjectDiagram className="inline-block mr-2" />
               Projects

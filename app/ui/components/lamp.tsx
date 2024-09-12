@@ -52,7 +52,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative transition-all duration-1000 ease-in flex min-h-[90vh] dark:min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-black  w-full rounded-md z-0 dark:invert dark:grayscale",
+        "relative transition-all duration-1000 ease-in flex min-h-[90vh] dark:lg:min-h-[60vh] flex-col items-center justify-center overflow-hidden bg-black  w-full rounded-md z-0 dark:invert dark:grayscale",
         className ?? ""
       )}
     >

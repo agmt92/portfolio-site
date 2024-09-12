@@ -73,7 +73,7 @@ export const FlipWords = ({
             }}
             className={cn(
               "inline-block whitespace-nowrap",
-              word === "AG's" ? "text-teal-200/25 dark:text-teal-950/40" : "dark:text-neutral-900/70 text-neutral-100/50"
+              word === "AG's" ? "text-teal-300/90 dark:text-teal-300/80 dark:bg-gradient-to-l dark:from-transparent dark:via-amber-50/10 dark:to-transparent" : "dark:text-black/70 text-neutral-50/80"
             )}
           >
             {word.split("").map((letter, letterIndex) => (

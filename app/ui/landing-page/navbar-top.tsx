@@ -1,10 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { useOutsideClick } from "@/app/hooks/use-outside-click";
 
 export default function Navbar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -12,6 +13,7 @@ export default function Navbar() {
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const pathname = usePathname();
+    const navbarRef = useRef<HTMLDivElement>(null);
 
     const toggleNavbar = () => {
         setIsExpanded(!isExpanded);
@@ -41,6 +43,11 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollTop]);
 
+    useOutsideClick(navbarRef, () => {
+        setIsExpanded(false)
+        setIsVisible(false)
+    });
+
     const links = [
         { name: 'HOME', href: '/' },
         { name: 'ABOUT ME', href: '/about' },
@@ -51,6 +58,7 @@ export default function Navbar() {
 
     return (
         <nav
+            ref={navbarRef}
             className={clsx(
                 "h-auto z-50 border-b border-neutral-700 dark:border-neutral-200 sticky top-0 transition-transform duration-300 ease-in-out",
                 "bg-black/50 dark:bg-neutral-50/90", // Background changes

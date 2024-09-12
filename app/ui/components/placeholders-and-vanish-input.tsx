@@ -196,115 +196,107 @@ export default function PlaceholdersAndVanishInput({
 
   return (
     <form
-      className={cn(
-        "w-full mb-12 relative max-w-xl mx-auto bg-zinc-50 dark:bg-white h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
-        value && "bg-gray-50"
-      )}
-      onSubmit={handleSubmit}
-      onReset={handleClear}
+  className={cn(
+    "w-[80vw] mb-12 relative max-w-xl mx-auto bg-zinc-500 dark:bg-neutral-200 h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
+    value && "bg-gray-50"
+  )}
+  onSubmit={handleSubmit}
+  onReset={handleClear}
+>
+  <canvas
+    className={cn(
+      "absolute pointer-events-none  text-base transform scale-50 top-[20%] left-2 sm:left-8 origin-top-left filter invert dark:invert pr-20",
+      !animating ? "opacity-0" : "opacity-100"
+    )}
+    ref={canvasRef}
+  />
 
+  {/* Input field without the default placeholder when animating */}
+  <input
+    onChange={(e) => {
+      if (!animating) {
+        setValue(e.target.value);
+        onChange && onChange(e);
+        handleSearchChange(e.target.value);
+      }
+    }}
+    onKeyDown={handleKeyDown}
+    ref={inputRef}
+    value={value}
+    placeholder={animating ? "" : ""} // Remove placeholder while animating
+    aria-label="Search input"
+    type="text"
+    className={cn(
+      "w-full relative text-sm sm:text-base z-50 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-12 pr-20",
+      animating ? "text-transparent dark:text-transparent" : ""
+    )}
+  />
+
+  {/* Submit and clear buttons */}
+  <button
+    onClick={handleClear}
+    type="button"
+    aria-label="Clear search"
+    className="absolute left-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-red-300 dark:disabled:bg-red-30 focus:ring focus:none bg-red-500 dark:bg-red-500 hover:bg-red-700 dark:hover:bg-red-700 active:bg-red-500 active:dark:bg-red-500 transition duration-200 flex items-center justify-center"
+  >
+    X
+  </button>
+  
+  <button
+    disabled={!value}
+    type="submit"
+    aria-label="Submit search"
+    className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-300 bg-black dark:bg-zinc-600 dark:disabled:bg-zinc-100 transition duration-200 flex items-center justify-center"
+  >
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-white dark:text-gray-300 h-4 w-4"
     >
-      <canvas
-        className={cn(
-          "absolute pointer-events-none  text-base transform scale-50 top-[20%] left-2 sm:left-8 origin-top-left filter invert dark:invert-0 pr-20",
-          !animating ? "opacity-0" : "opacity-100"
-        )}
-        ref={canvasRef}
-      />
-      <input
-        onChange={(e) => {
-          if (!animating) {
-            setValue(e.target.value);
-            onChange && onChange(e);
-            handleSearchChange(e.target.value);
-          }
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <motion.path
+        d="M5 12l14 0"
+        initial={{
+          strokeDasharray: "50%",
+          strokeDashoffset: "50%",
         }}
-        onKeyDown={handleKeyDown}
-        ref={inputRef}
-        value={value}
-        placeholder={placeholders[currentPlaceholder]} 
-        aria-label="Search input"
-        type="text"
-        className={cn(
-          "w-full relative text-sm sm:text-base z-50 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-12 pr-20",
-          animating ? "text-transparent dark:text-transparent" : ""
-        )}
+        animate={{
+          strokeDashoffset: value ? 0 : "50%",
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "linear",
+        }}
       />
-      <button
+      <path d="M13 18l6 -6" />
+      <path d="M13 6l6 6" />
+    </motion.svg>
+  </button>
 
-        onClick={handleClear}
-        type="button"
-        aria-label="Clear search"
-        className="absolute left-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-red-300 dark:disabled:bg-red-30 focus:ring focus:none bg-red-500 dark:bg-red-500 active:bg-red-700 active:dark:bg-red-700 transition duration-200 flex items-center justify-center"
-      >
-        X
-      </button>
-    
-      <button
-        disabled={!value}
-        type="submit"
-        aria-label="Submit search"
-        className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
-      >
-        <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-gray-300 h-4 w-4"
+  {/* Animated placeholder using Framer Motion */}
+  <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
+    <AnimatePresence mode="wait">
+      {!value && (
+        <motion.p
+          initial={{ y: 5, opacity: 0 }}
+          key={`current-placeholder-${currentPlaceholder}`}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -15, opacity: 0 }}
+          transition={{ duration: 0.3, ease: "linear" }}
+          className="dark:text-black text-sm sm:text-base font-normal text-white pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <motion.path
-            d="M5 12l14 0"
-            initial={{
-              strokeDasharray: "50%",
-              strokeDashoffset: "50%",
-            }}
-            animate={{
-              strokeDashoffset: value ? 0 : "50%",
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "linear",
-            }}
-          />
-          <path d="M13 18l6 -6" />
-          <path d="M13 6l6 6" />
-        </motion.svg>
-      </button>
-      <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
-        <AnimatePresence mode="wait">
-          {!value && (
-            <motion.p
-              initial={{
-                y: 5,
-                opacity: 0,
-              }}
-              key={`current-placeholder-${currentPlaceholder}`}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              exit={{
-                y: -15,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "linear",
-              }}
-              className="dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-100 pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
-            >
-              {placeholders[currentPlaceholder]}
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
-    </form>
+          {placeholders[currentPlaceholder]}
+        </motion.p>
+      )}
+    </AnimatePresence>
+  </div>
+</form>
   );
 }

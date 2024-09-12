@@ -7,3 +7,5 @@ const placeholders = [
   ];
 
   export { placeholders };
+
+  

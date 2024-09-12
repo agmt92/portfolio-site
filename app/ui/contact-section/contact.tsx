@@ -116,7 +116,7 @@ const Form: React.FC = () => {
               </a>{' '}
               or just give me a call.
             </p>
-            <p className="pt-4">
+            <p className="pt-4 text-gray-100 dark:text-gray-900">
               Should you also be in Vienna and want to grab a coffee, let me know. I&apos;m always up for a good chat.
             </p>
 

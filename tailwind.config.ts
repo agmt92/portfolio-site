@@ -49,8 +49,8 @@ const config: Config = {
         scroll: 'scroll 40s linear infinite',
         shimmer: 'shimmer 2s infinite forwards',
         aurora: "aurora 60s linear infinite",
-        slidein300: "slidein 1s ease 300ms forwards",
-        slidein700: "slidein 1s ease 700ms forwards",
+        slidein300: "slidein 1s ease 150ms forwards",
+        slidein700: "slidein 1s ease 300ms forwards",
       },
       keyframes: {
         aurora: {
