@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-import Image from 'next/image';
 import Link from 'next/link';
+import Logo from "../components/logo";
+
+
 
 export default function Footer() {
     return (
@@ -10,18 +12,13 @@ export default function Footer() {
 		<div className="grid grid-cols-12">
 			<div className="col-span-full md:col-span-6">
 				<Link rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
-					<div className="flex items-center justify-center w-64 h-64 rounded-ful">
-						<Image src="/logo/logo.svg" alt="Logo" 
-                        width={100} 
-                        height={100}
-                        className="w-64 h-64 rounded-full"
-                        style={{marginTop: '-9rem'}}
-                        />
+					<div className="flex items-center justify-center w-64 h-44 mb-12 sm:mb-6 rounded-ful">
+					<Logo className="w-64 h-44 dark:drop-shadow-lg  text-white dark:text-black" />
 					</div>
-					<span className="self-start text-2xl font-semibold">Mohamed Tarek AbdelGhani</span>
+					<span className="self-start text-lg md:text-md font-semibold">Mohamed Tarek AbdelGhani</span>
 				</Link>
 			</div>
-			<div className="col-span-6 lg:col-span-2 lg:col-start-9 text-center md:text-left md:col-span-3">
+			<div className="pl-0 md:pl-12 lg:pl-0 col-span-6 lg:col-span-2 lg:col-start-9 text-center md:text-left md:col-span-3">
 				<p className="pb-1 text-lg font-medium">Legal</p>
 				<ul>
                     <li>
@@ -46,7 +43,7 @@ export default function Footer() {
                     </li>
 				</ul>
 			</div>
-			<div className="col-span-6 lg:col-span-2 text-center md:text-left md:col-span-3">
+			<div className="pl-0 md:pl-12 lg:pl-0 col-span-6 lg:col-span-2 text-center md:text-left md:col-span-3">
 				<p className="pb-1 text-lg font-medium">About</p>
 				<ul>
                     <li>

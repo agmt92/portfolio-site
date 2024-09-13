@@ -30,8 +30,16 @@ const nextConfig = {
   },
   experimental: {
     ppr: 'incremental',
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
-};
+}
 
 module.exports = nextConfig;
 

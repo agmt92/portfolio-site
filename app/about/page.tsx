@@ -39,10 +39,10 @@ export default function Page() {
                   <p className="mt-4 tracking-wider pt-20">
                     Contact me at{" "}
                     <a
-                      href="mailto:agmt@dr.com"
+                      href="mailto:contact@mtag.me"
                       className="text-stone-50 underline decoration-teal-500 dark:text-neutral-900 font-black"
                     >
-                      agmt@dr.com
+                      contact@mtag.me
                     </a>
                   </p>
                 </div>

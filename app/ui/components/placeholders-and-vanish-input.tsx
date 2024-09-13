@@ -227,7 +227,7 @@ export default function PlaceholdersAndVanishInput({
     aria-label="Search input"
     type="text"
     className={cn(
-      "w-full relative text-sm sm:text-base z-50 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-12 pr-20",
+      "w-full relative text-sm sm:text-base z-49 border-none dark:text-black bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-12 pr-20",
       animating ? "text-transparent dark:text-transparent" : ""
     )}
   />
@@ -237,7 +237,7 @@ export default function PlaceholdersAndVanishInput({
     onClick={handleClear}
     type="button"
     aria-label="Clear search"
-    className="absolute left-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-red-300 dark:disabled:bg-red-30 focus:ring focus:none bg-red-500 dark:bg-red-500 hover:bg-red-700 dark:hover:bg-red-700 active:bg-red-500 active:dark:bg-red-500 transition duration-200 flex items-center justify-center"
+    className="absolute left-2 top-1/2 z-49 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-red-300 dark:disabled:bg-red-30 focus:ring focus:none bg-red-500 dark:bg-red-500 hover:bg-red-700 dark:hover:bg-red-700 active:bg-red-500 active:dark:bg-red-500 transition duration-200 flex items-center justify-center"
   >
     X
   </button>
@@ -246,7 +246,7 @@ export default function PlaceholdersAndVanishInput({
     disabled={!value}
     type="submit"
     aria-label="Submit search"
-    className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-300 bg-black dark:bg-zinc-600 dark:disabled:bg-zinc-100 transition duration-200 flex items-center justify-center"
+    className="absolute right-2 top-1/2 z-49 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-300 bg-black dark:bg-zinc-600 dark:disabled:bg-zinc-100 transition duration-200 flex items-center justify-center"
   >
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +281,7 @@ export default function PlaceholdersAndVanishInput({
   </button>
 
   {/* Animated placeholder using Framer Motion */}
-  <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
+  <div className="absolute  inset-0 flex items-center rounded-full pointer-events-none">
     <AnimatePresence mode="wait">
       {!value && (
         <motion.p
@@ -290,7 +290,7 @@ export default function PlaceholdersAndVanishInput({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -15, opacity: 0 }}
           transition={{ duration: 0.3, ease: "linear" }}
-          className="dark:text-black text-sm sm:text-base font-normal text-white pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
+          className="dark:text-black text-sm sm:text-base font-normal text-white pl-12 text-left w-[calc(100%-2rem)] truncate"
         >
           {placeholders[currentPlaceholder]}
         </motion.p>

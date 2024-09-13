@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useOutsideClick } from "@/app/hooks/use-outside-click";
+import Logo from "../components/logo";
 
 export default function Navbar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -31,6 +31,9 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollTop = window.scrollY;
+            if (currentScrollTop < 90) {
+                setIsVisible(true);
+            } else
             if (currentScrollTop > lastScrollTop) {
                 setIsVisible(false);
             } else {
@@ -44,9 +47,19 @@ export default function Navbar() {
     }, [lastScrollTop]);
 
     useOutsideClick(navbarRef, () => {
-        setIsExpanded(false)
-        setIsVisible(false)
-    });
+        const currentScrollTop = window.scrollY;
+        if (currentScrollTop < 90) {
+            setIsVisible(true);
+            setIsExpanded(false);
+        } else if (!isVisible){
+            setIsVisible(true);
+            setIsExpanded(false)
+        } else if (isVisible) {
+            setIsExpanded(false);
+            setIsVisible(false);
+        } return;
+    }
+    );
 
     const links = [
         { name: 'HOME', href: '/' },
@@ -61,14 +74,14 @@ export default function Navbar() {
             ref={navbarRef}
             className={clsx(
                 "h-auto z-50 border-b border-neutral-700 dark:border-neutral-200 sticky top-0 transition-transform duration-300 ease-in-out",
-                "bg-black/50 dark:bg-neutral-50/90", // Background changes
+                "bg-black/50 dark:bg-neutral-50/90", 
                 { "-translate-y-full": !isVisible, "translate-y-0": isVisible }
             )}
         >
             <div className="flex backdrop-blur-lg dark:backdrop-blur-sm items-center justify-between p-4">
                 <div className="items-center flex sm:hidden md:flex">
-                    <Image src="/logo/logo.svg" alt="Logo" width={44} height={44} className="cursor-pointer" onClick={toggleNavbar}/>
-                    <h1 className="ml-2 text-lg font-bold text-neutral-200 dark:text-black cursor-pointer" onClick={toggleNavbar}>AG</h1>
+                <Logo className="w-24 h-16 text-white dark:text-black" />
+                    <h1 className="ml-2 text-3xl font-bold text-white dark:text-black cursor-pointer" onClick={toggleNavbar}>AG</h1>
                 </div>
                 <div className="flex items-center space-x-4 ml-auto">
                 <button
