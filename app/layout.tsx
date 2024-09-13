@@ -5,6 +5,7 @@ import Footer from './ui/landing-page/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Mohamed Tarek AbdelGhani',
