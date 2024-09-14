@@ -72,6 +72,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
+        userAgent: 'facebookexternalhit', // Facebook
+        allow: '/',
+      },
+      {
+        userAgent: 'Twitterbot', // Twitter/X
+        allow: '/',
+      },
+      {
         userAgent: '*',
         disallow: '/',
       },

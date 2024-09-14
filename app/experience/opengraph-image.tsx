@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
  
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'Changelog from my journey'
 export const size = {
   width: 1200,
   height: 630,
@@ -33,7 +33,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        Changelog from my journey
       </div>
     ),
     // ImageResponse options

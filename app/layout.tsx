@@ -9,10 +9,10 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
   title: {
     template: '%s | Mohamed Tarek AbdelGhani',
-    default: 'MT AG',
+    default: 'AG Portfolio',
   },
-  description: 'My official portfolio website built with Next.js.',
-  metadataBase: new URL('https://my-portfolio.vercel.app'),
+  description: 'Have an idea? Let me bring it to life!',
+  metadataBase: new URL('https://www.mtag.me'),
 };
 
 export default function RootLayout({
