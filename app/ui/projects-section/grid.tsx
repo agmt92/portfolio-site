@@ -103,13 +103,13 @@ export default function ExpandableCard() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-200 dark:text-neutral-700 text-base"
+                      className="font-medium text-neutral-50 dark:text-neutral-700 text-base"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-400 dark:text-neutral-600 text-base"
+                      className="text-neutral-300 dark:text-neutral-600 text-base"
                     >
                       {active.description}
                     </motion.p>
@@ -146,7 +146,7 @@ export default function ExpandableCard() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-400 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-600 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-300 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-600 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -187,13 +187,13 @@ export default function ExpandableCard() {
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-200 dark:text-neutral-800 text-center md:text-left text-base"
+                  className="font-medium text-neutral-50 dark:text-neutral-800 text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${id}-${index}`}
-                  className="text-neutral-400 dark:text-neutral-600 text-center md:text-left text-base"
+                  className="text-neutral-300 dark:text-neutral-600 text-center md:text-left text-base"
                 >
                   {card.description}
                 </motion.p>
