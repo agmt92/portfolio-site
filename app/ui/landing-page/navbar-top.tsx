@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import clsx from 'clsx';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useOutsideClick } from "@/app/hooks/use-outside-click";

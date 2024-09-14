@@ -15,7 +15,7 @@ export const contentType = 'image/png'
 export default async function Image() {
   // Font
   const interSemiBold = fetch(
-    new URL('/assets/Inter-SemiBold.ttf', import.meta.url)
+    new URL('../../assets/Inter-SemiBold.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer())
   
  

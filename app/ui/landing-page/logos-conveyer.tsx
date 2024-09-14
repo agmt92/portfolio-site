@@ -48,8 +48,8 @@ export default function LogosConveyer() {
               <Image
                 src={logo}
                 alt={`Logo ${index}`}
-                width={200}
-                height={100}
+                width={320}
+                height={320}
                 priority={false}
                 loading={index === 0 ? "eager" : "lazy"}
                 className="object-contain dark:grayscale dark:invert dark:contrast-50"

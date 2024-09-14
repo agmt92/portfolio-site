@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import imageUrl from "@/public/photos/ava.webp";
 import Link from "next/link";
 import { FaProjectDiagram, FaBriefcase, FaInfoCircle } from "react-icons/fa";
 import { CardBody, CardContainer, CardItem } from "@/app/ui/components/3d-card";
 import { BackgroundBeamsWithCollision } from "@/app/ui/components/background-beams-with-collision";
 
 export default function PassportSection() {
-  const imageUrl = "/photos/ava.webp";
 
   return (
     <BackgroundBeamsWithCollision>
@@ -37,13 +37,9 @@ export default function PassportSection() {
           >
             <Image
               src={imageUrl}
-              height="1000"
-              width="600"
-              quality={100}
+              placeholder="blur"
               className="object-cover object-[5%_30%] max-h-[50vh]  rounded-xl group-hover/card:shadow-xl"
               alt="Avatar"
-              loading="eager"
-              sizes=" (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </CardItem>
           <div className="flex justify-between h-24 items-center mt-20">

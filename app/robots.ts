@@ -84,6 +84,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       },
     ],
-    sitemap: 'https://mtag.me/sitemap.xml',
+    sitemap: 'https://www.mtag.me/sitemap.xml',
   }
 }

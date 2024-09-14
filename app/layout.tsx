@@ -4,6 +4,8 @@ import Navbar from './ui/landing-page/navbar-top';
 import Footer from './ui/landing-page/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { ViewTransitions } from 'next-view-transitions'
+
 
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ViewTransitions>
     <html lang="en">
       <body>
         <Navbar />
@@ -30,5 +33,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </ViewTransitions>
   );
 }

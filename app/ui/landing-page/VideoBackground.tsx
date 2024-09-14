@@ -42,7 +42,7 @@ const VideoBackground: React.FC = () => {
         const scrollPosition = window.scrollY;
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         const scrollFraction = scrollPosition / maxScroll;
-        const adjustedScrollFraction = scrollFraction * 3;
+        const adjustedScrollFraction = scrollFraction * 1;
 
         if (Number.isFinite(adjustedScrollFraction) && Number.isFinite(video.duration)) {
           video.currentTime = adjustedScrollFraction * video.duration;
@@ -87,6 +87,8 @@ const VideoBackground: React.FC = () => {
           <video
             ref={videoRef}
             className="hidden sm:block w-full h-auto object-contain"
+            width="100%"
+            height="37.5%"
             muted
             playsInline
             title="Background video from a Drone"
@@ -104,7 +106,7 @@ const VideoBackground: React.FC = () => {
         width={1080}
         height={405}
         sizes={"100vw"}
-        quality={100}
+        quality={30}
         priority={true}
       />
       <div className="absolute top-0 left-0 w-full h-full bg-transparent dark:bg-black -z-50"></div>
