@@ -36,6 +36,24 @@ export const cards = [
 },
 {
     description: "Front-End",
+    title: "React mini-projects sandbox 'on Nextjs'",
+    src: "/projects/reactsandbox.webp",
+    ctaText: "Visit",
+    ctaLink: "https://miniprojects-next.vercel.app/",
+    githubLink: "https://github.com/agmt92/miniprojects-next",
+    tags: "nextjs, reactjs, typescript",
+    content: () => {
+    return (
+        <p>
+        Group of mini-projects built using React.
+        Those projects were built originally on Vite and then migrated to NextJS for deployment altogether.
+        Main page has an unstyled table with a the list of projects. Each project has a link to the live version.
+        </p>
+    );
+    },
+},
+{
+    description: "Front-End",
     title: "Drum Machine",
     src: "/projects/drummachine.webp",
     ctaText: "Visit",

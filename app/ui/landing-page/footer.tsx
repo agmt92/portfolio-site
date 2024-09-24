@@ -11,7 +11,7 @@ export default function Footer() {
 	<div className="container px-6 mx-auto space-y-6 divide-y dark:divide-cyan-900 divide-cyan-100  md:space-y-12 divide-opacity-50">
 		<div className="grid grid-cols-12">
 			<div className="col-span-full md:col-span-6">
-				<Link rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
+				<Link rel="noopener noreferrer" href="" className="flex justify-center space-x-3 md:justify-start">
 					<div className="flex items-center justify-center w-64 h-44 mb-12 sm:mb-6 rounded-ful">
 					<Logo className="w-64 h-44 dark:drop-shadow-lg  text-white dark:text-black" />
 					</div>
@@ -73,10 +73,10 @@ export default function Footer() {
 		<div className="grid justify-center pt-6 lg:justify-between">
 			<div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
 				<span>©2024 All rights reserved</span>
-				<Link rel="noopener noreferrer" href="#">
+				<Link rel="noopener noreferrer" href="/privacy">
 					<span>Privacy policy</span>
 				</Link>
-				<Link rel="noopener noreferrer" href="#">
+				<Link rel="noopener noreferrer" href="/terms">
 					<span>Terms of service</span>
 				</Link>
 			</div>
