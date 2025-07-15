@@ -210,7 +210,7 @@ export default function Page() {
                   <ul className="space-y-1">
                     <li>English</li>
                     <li>عربي</li>
-                    <li>Deutsch(B2)</li>
+                    <li>Deutsch(C1)</li>
                     <li>Português(B1)</li>
                     <li>Русский(B1)</li>
                   </ul>
